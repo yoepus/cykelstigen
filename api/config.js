@@ -4,14 +4,12 @@ export default function handler(req, res) {
     turnstileSiteKey: process.env.TURNSTILE_SITE_KEY || '',
     contactEmail: process.env.CONTACT_EMAIL || 'yoed.anise@gmail.com',
     // What the path itself is estimated to cost to build.
-    buildCost: int(process.env.BUILD_COST_SEK, 150000),
+    buildCost: int(process.env.BUILD_COST_SEK, 170000),
     // What the campaign is raising in total, including the match.
-    goal: int(process.env.GOAL_SEK, 300000),
+    goal: int(process.env.GOAL_SEK, 320000),
     // 1:1 match, capped.
-    matchCap: int(process.env.MATCH_CAP_SEK, 300000),
+    matchCap: int(process.env.MATCH_CAP_SEK, 160000),
     matcherName: process.env.MATCHER_NAME || 'Yoed Anise',
-    // The existing ideell förening the project would run under.
-    associationName: process.env.ASSOCIATION_NAME || 'Näs Focksta Vänner',
   });
 }
 
