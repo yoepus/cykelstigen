@@ -63,10 +63,9 @@ ADMIN_TOKEN=$(openssl rand -hex 32)   # guards /admin
 IP_SALT=$(openssl rand -hex 16)       # hashes visitor IPs before storage
 ```
 
-Set `ASSOCIATION_NAME` to the förening's real name and it replaces every
-"byföreningen" on the page. The money figures are all environment variables too
-— `GOAL_SEK`, `MATCH_CAP_SEK`, `MATCHER_NAME`, `BUILD_COST_SEK` — so changing
-the target is one variable and a redeploy, not an edit.
+The money figures are all environment variables — `GOAL_SEK`, `MATCH_CAP_SEK`,
+`MATCHER_NAME`, `BUILD_COST_SEK` — so changing the target is one variable and a
+redeploy, not an edit.
 
 Add them under **Settings → Environment Variables** for Production, Preview and
 Development, then redeploy. Without `ADMIN_TOKEN` the admin API refuses every
@@ -107,9 +106,8 @@ record, **Rensa text** removes only the comment and keeps the signature, and
 | **Street address** | yes, opt-out | maps the signature to a real home |
 | **Fastighetsbeteckning** | yes, opt-out | the unit that counts legally — a landowner and Lantmäteriet reason about *fastigheter*, not people |
 | Pledge in SEK | yes | funding, matched 1:1 |
-| Volunteer hours + what they can help with | yes | doing the work in-house drops the build from ~150,000 to 70–90,000 kr |
-| Member of the förening? | no | tells the board how much of this is its own membership |
-| Backs the association taking it on? | aggregate | the mandate count, which is the actual vote |
+| Volunteer hours + what they can help with | yes | doing the work in-house brings the build well below the 170,000 kr estimate |
+| Backs an association running it? | aggregate | the mandate count, which is the actual vote |
 | Email + consent tick | no | contact when pledges fall due |
 | Comment | yes | shown as a pull quote |
 
@@ -154,8 +152,8 @@ The element's content is filled from whichever attribute matches the active
 language, so edit the attributes, never the text between the tags. `{ASSOC}`
 inside either attribute is replaced with `ASSOCIATION_NAME` at render time.
 
-Nothing about the money is hard-coded — `GOAL_SEK`, `MATCH_CAP_SEK`,
-`MATCHER_NAME` and `BUILD_COST_SEK` drive the counters, the progress bar and the
+Nothing about the money is hard-coded — `GOAL_SEK` (320000), `MATCH_CAP_SEK` (160000),
+`MATCHER_NAME` and `BUILD_COST_SEK` (170000) drive the counters, the progress bar and the
 match panel. The one place a number is written into the page is the cost table
 in the "Målet" section, which is prose and needs editing by hand if the
 line items change.

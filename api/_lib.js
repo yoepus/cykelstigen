@@ -14,7 +14,7 @@ const VILLAGES = [
 /** What someone can offer besides money. Anything else is dropped. */
 const HELP = ['maskin', 'kroppsarbete', 'planering', 'ansokningar', 'material', 'fika'];
 
-/** Membership / mandate answers. */
+/** Mandate answers. */
 const TRISTATE = ['ja', 'nej', 'vet_ej'];
 
 /** Strip control chars, collapse whitespace, hard-cap length. */

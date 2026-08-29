@@ -4,176 +4,213 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cykelstigen Näs Focksta–Stora Bärsta</title>
-<meta name="description" content="490 meter stig mellan Näs Focksta och Stora Bärsta, så att barnen slipper cykla på väg C596. Skriv under, lova ett bidrag eller några timmars arbete.">
+<meta name="description" content="500 meter gång- och cykelstig mellan Näs Focksta och Stora Bärsta, så att ingen behöver ut på väg C596. Skriv under, lova ett bidrag eller några timmars arbete.">
 <meta property="og:title" content="Cykelstigen Näs Focksta–Stora Bärsta">
-<meta property="og:description" content="490 meter stig så att barnen slipper cykla på C596. Varje krona matchas 1:1.">
+<meta property="og:description" content="500 meter stig mellan två byar. Varje krona matchas 1:1.">
 <meta property="og:image" content="/route.jpg">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400..700&display=swap">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚲</text></svg>">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..800,0..100,0..1&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400..700&display=swap">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 132 132'><circle cx='66' cy='66' r='58' fill='%23CBD9C2'/><path d='M34,50 C52,44 54,66 68,72 C80,77 88,84 96,90' fill='none' stroke='%231D1D1A' stroke-width='11' stroke-linecap='round'/></svg>">
 <style>
 :root{
-  --paper:#F2F3EE; --surface:#FFFFFF; --surface-2:#E7EAE0; --band:#EDEFE7;
-  --ink:#171E18; --ink-2:#5B6A5C; --ink-3:#8B978C; --line:#D3D8CA;
-  --accent:#1477B8; --accent-ink:#0E5C90; --accent-soft:#DCEAF4;
-  --forest:#3F6046; --forest-soft:#DDE6DC; --ochre:#C6B382;
-  --shadow:0 1px 2px rgba(23,30,24,.06), 0 8px 24px -12px rgba(23,30,24,.18);
+  --paper:#F1F0E8; --surface:#FBFAF5; --surface-2:#E6E7DA; --band:#EAEADF;
+  --ink:#1B211B; --ink-2:#5C6A5C; --ink-3:#8D968B; --line:#D6D8CA;
+  --moss:#33553C; --moss-ink:#274430; --moss-soft:#DCE6DC;
+  --birch:#B39455; --rust:#B05B34;
+  --map-field:#E9DFBE; --map-forest:#CBD9C2; --map-ink:#1D1D1A;
+  --shadow:0 1px 2px rgba(27,33,27,.05), 0 10px 26px -14px rgba(27,33,27,.2);
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --paper:#0F1310; --surface:#161C17; --surface-2:#1D241E; --band:#131813;
-    --ink:#E8ECE3; --ink-2:#9BA89B; --ink-3:#6D7A6E; --line:#2A332B;
-    --accent:#5FB6E9; --accent-ink:#8ACCF2; --accent-soft:#12303F;
-    --forest:#83AC8D; --forest-soft:#1B2A1E; --ochre:#C6B382;
-    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+    --paper:#0E120F; --surface:#161B16; --surface-2:#1D241E; --band:#121712;
+    --ink:#E9ECE2; --ink-2:#9AA598; --ink-3:#6B756A; --line:#2A322A;
+    --moss:#8FB795; --moss-ink:#A9C9AD; --moss-soft:#1A2A1D;
+    --birch:#C9AC6C; --rust:#D08052;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 26px -14px rgba(0,0,0,.65);
   }
 }
 :root[data-theme="dark"]{
-  --paper:#0F1310; --surface:#161C17; --surface-2:#1D241E; --band:#131813;
-  --ink:#E8ECE3; --ink-2:#9BA89B; --ink-3:#6D7A6E; --line:#2A332B;
-  --accent:#5FB6E9; --accent-ink:#8ACCF2; --accent-soft:#12303F;
-  --forest:#83AC8D; --forest-soft:#1B2A1E; --ochre:#C6B382;
-  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+  --paper:#0E120F; --surface:#161B16; --surface-2:#1D241E; --band:#121712;
+  --ink:#E9ECE2; --ink-2:#9AA598; --ink-3:#6B756A; --line:#2A322A;
+  --moss:#8FB795; --moss-ink:#A9C9AD; --moss-soft:#1A2A1D;
+  --birch:#C9AC6C; --rust:#D08052;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 26px -14px rgba(0,0,0,.65);
 }
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:"Source Serif 4",Georgia,serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
-h1,h2,h3,.disp{font-family:Archivo,"Helvetica Neue",Arial,sans-serif;font-variation-settings:"wdth" 116;font-weight:700;letter-spacing:-.012em;text-wrap:balance;margin:0}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Source Serif 4",Georgia,serif;font-size:17px;line-height:1.66;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-variation-settings:"SOFT" 55,"WONK" 1;
+  font-weight:600;letter-spacing:-.012em;text-wrap:balance;margin:0}
 .mono,.num{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
-a{color:var(--accent-ink)}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+a{color:var(--moss-ink)}
+:focus-visible{outline:2px solid var(--moss);outline-offset:2px;border-radius:3px}
 
 .wrap{max-width:74rem;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem)}
 .prose{max-width:38rem}
-.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);margin:0 0 .6rem}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--moss-ink);margin:0 0 .7rem}
 .eyebrow.q{color:var(--ink-3)}
 
-.topbar{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.topbar-in{display:flex;align-items:center;gap:1rem;justify-content:space-between;padding:.55rem 0}
-.brandmark{display:flex;align-items:center;gap:.55rem;font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.topbar{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--paper) 90%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar-in{display:flex;align-items:center;gap:1rem;justify-content:space-between;padding:.5rem 0}
+.brandmark{display:flex;align-items:center;gap:.6rem;font-family:"IBM Plex Mono",monospace;
+  font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.brandmark svg{display:block;flex:0 0 auto}
+@media(max-width:32rem){.brandmark span{display:none}}
 .barnav{display:flex;align-items:center;gap:.7rem}
-.barnav a{font-family:Archivo,sans-serif;font-weight:600;font-size:.82rem;text-decoration:none;background:var(--accent);color:#fff;padding:.36rem .8rem;border-radius:999px}
-.barnav a:hover{background:var(--accent-ink)}
-@media(max-width:30rem){.barnav a{display:none}}
+.barnav a{font-family:Fraunces,serif;font-weight:600;font-size:.86rem;text-decoration:none;
+  background:var(--moss);color:var(--paper);padding:.34rem .85rem;border-radius:999px}
+.barnav a:hover{background:var(--moss-ink)}
 .toggle{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface)}
-.toggle button{appearance:none;border:0;background:none;cursor:pointer;font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.08em;padding:.32rem .68rem;color:var(--ink-2)}
-.toggle button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.toggle button{appearance:none;border:0;background:none;cursor:pointer;font-family:"IBM Plex Mono",monospace;
+  font-size:.7rem;letter-spacing:.08em;padding:.32rem .68rem;color:var(--ink-2)}
+.toggle button[aria-pressed="true"]{background:var(--moss);color:var(--paper)}
 
-.hero{padding:clamp(2.5rem,7vw,5rem) 0 0}
-.hero h1{font-size:clamp(2.1rem,6.2vw,4rem);line-height:1.02;font-variation-settings:"wdth" 122;margin-bottom:1rem}
-.hero .lede{font-size:clamp(1.05rem,2.2vw,1.3rem);color:var(--ink-2);max-width:36rem;margin:0}
-.rule{height:3px;background:var(--accent);width:6.5rem;border-radius:2px;margin:1.4rem 0}
+.hero{padding:clamp(2rem,6vw,4rem) 0 0}
+.herotop{display:grid;gap:clamp(1.4rem,4vw,3rem);align-items:center;grid-template-columns:1fr}
+@media(min-width:52rem){.herotop{grid-template-columns:1fr auto}}
+.seal{width:clamp(9rem,22vw,13rem);height:auto;justify-self:center}
+.hero h1{font-size:clamp(2rem,5.6vw,3.6rem);line-height:1.04;font-variation-settings:"SOFT" 70,"WONK" 1;margin-bottom:1rem}
+.hero .lede{font-size:clamp(1.03rem,2vw,1.22rem);color:var(--ink-2);max-width:36rem;margin:0}
+.rule{height:3px;background:var(--moss);width:5.5rem;border-radius:2px;margin:1.3rem 0}
 
-.counters{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px 10px 0 0;overflow:hidden;margin:2.4rem 0 0}
+.counters{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:12px 12px 0 0;overflow:hidden;margin:2.4rem 0 0}
 .counter{background:var(--surface);padding:1rem 1.1rem}
-.counter .k{font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:.3rem}
-.counter .v{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;font-size:clamp(1.4rem,3.4vw,1.9rem);font-weight:600;line-height:1;color:var(--ink)}
-.counter .v.hi{color:var(--accent)}
+.counter .k{font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:.3rem}
+.counter .v{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;
+  font-size:clamp(1.4rem,3.4vw,1.9rem);font-weight:600;line-height:1}
+.counter .v.hi{color:var(--moss-ink)}
 .counter .u{font-size:.78rem;color:var(--ink-3);font-family:"IBM Plex Mono",monospace}
 
-/* match panel */
-.match{border:1px solid var(--line);border-top:0;border-radius:0 0 10px 10px;background:var(--surface);padding:1.2rem clamp(1rem,3vw,1.4rem) 1.3rem}
+.match{border:1px solid var(--line);border-top:0;border-radius:0 0 12px 12px;background:var(--surface);
+  padding:1.2rem clamp(1rem,3vw,1.4rem) 1.3rem}
 .match-head{display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:baseline;justify-content:space-between;margin-bottom:.9rem}
-.match-head h3{font-size:1.02rem}
+.match-head h3{font-size:1.04rem}
 .match-head .cap{font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--ink-3)}
 .ledger{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:.5rem;align-items:center;margin-bottom:1rem}
 @media(max-width:34rem){.ledger{grid-template-columns:1fr;gap:.35rem}.ledger .op{display:none}}
 .ledger .cell{text-align:center}
-.ledger .cell b{display:block;font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;font-size:clamp(1.15rem,3vw,1.5rem);font-weight:600}
-.ledger .cell.sum b{color:var(--accent)}
-.ledger .cell span{font-family:"IBM Plex Mono",monospace;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
-.ledger .op{font-family:Archivo,sans-serif;font-size:1.2rem;color:var(--ink-3);text-align:center}
+.ledger .cell b{display:block;font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;
+  font-size:clamp(1.15rem,3vw,1.5rem);font-weight:600}
+.ledger .cell.sum b{color:var(--moss-ink)}
+.ledger .cell span{font-family:"IBM Plex Mono",monospace;font-size:.63rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-3)}
+.ledger .op{font-family:Fraunces,serif;font-size:1.2rem;color:var(--ink-3);text-align:center}
 .goalbar{height:9px;border-radius:5px;background:var(--surface-2);overflow:hidden;display:flex}
 .goalbar i{display:block;height:100%;width:0;transition:width .5s ease}
-.goalbar .own{background:var(--accent)}
-.goalbar .mat{background:var(--forest)}
+.goalbar .own{background:var(--moss)}
+.goalbar .mat{background:var(--birch)}
 @media(prefers-reduced-motion:reduce){.goalbar i{transition:none}}
-.goalfoot{display:flex;justify-content:space-between;gap:1rem;margin-top:.5rem;font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--ink-3)}
-.key{display:inline-block;width:.6rem;height:.6rem;border-radius:2px;margin-right:.3rem;vertical-align:baseline}
+.goalfoot{display:flex;justify-content:space-between;gap:1rem;margin-top:.5rem;
+  font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--ink-3);flex-wrap:wrap}
+.key{display:inline-block;width:.6rem;height:.6rem;border-radius:2px;margin-right:.3rem}
 
-.plate{margin:2.6rem 0 0;border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden;box-shadow:var(--shadow)}
+.plate{margin:2.6rem 0 0;border:1px solid var(--line);border-radius:12px;background:var(--surface);
+  overflow:hidden;box-shadow:var(--shadow)}
 .plate img{display:block;width:100%;height:auto}
-.plate figcaption{padding:.7rem 1rem;font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--ink-2);border-top:1px solid var(--line);background:var(--surface-2)}
+.plate figcaption{padding:.7rem 1rem;font-family:"IBM Plex Mono",monospace;font-size:.72rem;
+  color:var(--ink-2);border-top:1px solid var(--line);background:var(--surface-2)}
 
 section{padding:clamp(2.8rem,6vw,4.5rem) 0;border-top:1px solid var(--line)}
 section[id]{scroll-margin-top:3.6rem}
-section h2{font-size:clamp(1.5rem,3.4vw,2.1rem);margin-bottom:1rem}
+section h2{font-size:clamp(1.5rem,3.4vw,2.15rem);margin-bottom:1rem}
 section p{margin:0 0 1rem}
 .band{background:var(--band)}
 .cols{display:grid;grid-template-columns:1fr;gap:clamp(1.5rem,4vw,3rem)}
 @media(min-width:56rem){.cols.two{grid-template-columns:1.05fr .95fr;align-items:start}}
 
 .spec{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
-.spec li{display:flex;justify-content:space-between;gap:1rem;padding:.72rem 0;border-bottom:1px solid var(--line);align-items:baseline}
+.spec li{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--line);align-items:baseline}
 .spec .lbl{color:var(--ink-2);font-size:.95rem}
 .spec .val{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;font-weight:500;text-align:right}
 
+.who{display:grid;gap:.9rem;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));margin-top:1.5rem}
+.who div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.9rem 1rem}
+.who h3{font-size:.96rem;margin-bottom:.2rem}
+.who p{font-size:.9rem;color:var(--ink-2);margin:0}
+
 .asks{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));margin-top:1.6rem}
-.ask{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;padding:1.05rem 1.15rem}
-.ask.green{border-left-color:var(--forest)}
+.ask{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--moss);
+  border-radius:8px;padding:1.05rem 1.15rem}
 .ask h3{font-size:1rem;margin-bottom:.35rem}
 .ask p{font-size:.92rem;color:var(--ink-2);margin:0}
 
 .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface);margin-top:1.4rem}
-table{border-collapse:collapse;width:100%;min-width:32rem;font-size:.93rem}
+table{border-collapse:collapse;width:100%;min-width:30rem;font-size:.93rem}
 th,td{text-align:left;padding:.62rem .9rem;border-bottom:1px solid var(--line)}
-th{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);font-weight:500}
+th{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:500}
 td.n{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
 tfoot td{font-weight:700;border-bottom:0;background:var(--surface-2)}
-.note{font-size:.85rem;color:var(--ink-3);margin-top:.8rem}
+.note{font-size:.86rem;color:var(--ink-3);margin-top:.8rem}
 
-.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:clamp(1.2rem,3vw,1.8rem);box-shadow:var(--shadow)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;
+  padding:clamp(1.2rem,3vw,1.8rem);box-shadow:var(--shadow)}
 .field{margin-bottom:1rem}
 fieldset{border:1px solid var(--line);border-radius:9px;padding:.9rem 1rem 1rem;margin:0 0 1rem}
-legend{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);padding:0 .4rem}
-label{display:block;font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2);margin-bottom:.34rem}
-input,textarea,select{width:100%;font:inherit;font-size:.98rem;padding:.6rem .7rem;border:1px solid var(--line);border-radius:7px;background:var(--paper);color:var(--ink)}
+legend{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-2);padding:0 .4rem}
+label{display:block;font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--ink-2);margin-bottom:.34rem}
+input,textarea,select{width:100%;font:inherit;font-size:.98rem;padding:.6rem .7rem;border:1px solid var(--line);
+  border-radius:7px;background:var(--paper);color:var(--ink)}
 textarea{min-height:4.5rem;resize:vertical}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
 .hint{font-size:.82rem;color:var(--ink-3);margin:.3rem 0 0}
 .check{display:flex;gap:.6rem;align-items:flex-start;margin-bottom:.7rem}
 .check input{width:auto;margin-top:.28rem;flex:0 0 auto}
-.check label{text-transform:none;letter-spacing:0;font-family:"Source Serif 4",serif;font-size:.88rem;color:var(--ink-2);margin:0}
+.check label{text-transform:none;letter-spacing:0;font-family:"Source Serif 4",serif;font-size:.88rem;
+  color:var(--ink-2);margin:0}
 .checkgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:.1rem .9rem}
 .radios{display:flex;gap:1.1rem;flex-wrap:wrap}
 .radios .check{margin-bottom:0}
 .hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
-.btn{appearance:none;border:0;cursor:pointer;background:var(--accent);color:#fff;font-family:Archivo,sans-serif;font-weight:700;font-size:1rem;padding:.75rem 1.3rem;border-radius:8px;width:100%}
-.btn:hover{background:var(--accent-ink)}
+.btn{appearance:none;border:0;cursor:pointer;background:var(--moss);color:var(--paper);
+  font-family:Fraunces,serif;font-weight:600;font-size:1.02rem;padding:.75rem 1.3rem;border-radius:8px;width:100%}
+.btn:hover{background:var(--moss-ink)}
 .btn[disabled]{opacity:.55;cursor:progress}
 .msg{margin-top:1rem;padding:.85rem 1rem;border-radius:8px;font-size:.92rem;display:none}
-.msg.ok{display:block;background:var(--accent-soft);border:1px solid var(--accent)}
-.msg.err{display:block;background:var(--surface-2);border:1px solid var(--ochre)}
+.msg.ok{display:block;background:var(--moss-soft);border:1px solid var(--moss)}
+.msg.err{display:block;background:var(--surface-2);border:1px solid var(--rust)}
 #turnstile{margin-bottom:1rem}
-.live{background:var(--forest-soft);border:1px solid var(--forest);border-radius:8px;padding:.7rem .9rem;margin-bottom:1rem;font-size:.9rem;display:none}
+.live{background:var(--moss-soft);border:1px solid var(--moss);border-radius:8px;padding:.7rem .9rem;
+  margin-bottom:1rem;font-size:.9rem;display:none}
 .live.on{display:block}
 .live b{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
 
 .sigs{display:grid;gap:.55rem;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));margin-top:1.3rem}
 .sig{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:.65rem .8rem;font-size:.9rem}
-.sig .who{font-family:Archivo,sans-serif;font-weight:600}
-.sig .place{font-family:"IBM Plex Mono",monospace;font-size:.71rem;color:var(--accent-ink);margin-top:.2rem;letter-spacing:.02em}
+.sig .who2{font-family:Fraunces,serif;font-weight:600}
+.sig .place{font-family:"IBM Plex Mono",monospace;font-size:.71rem;color:var(--moss-ink);margin-top:.2rem}
 .sig .meta{font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--ink-3);margin-top:.15rem}
 .empty{color:var(--ink-3);font-size:.95rem;padding:1.2rem 0}
 
 .voices{columns:2 20rem;column-gap:1.1rem;margin-top:1.5rem}
-.voice{break-inside:avoid;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.05rem 1.15rem;margin:0 0 1.1rem;box-shadow:var(--shadow)}
+.voice{break-inside:avoid;background:var(--surface);border:1px solid var(--line);border-radius:10px;
+  padding:1.05rem 1.15rem;margin:0 0 1.1rem;box-shadow:var(--shadow)}
 .voice blockquote{margin:0;font-size:1.02rem;line-height:1.55}
-.voice blockquote::before{content:"”";font-family:Archivo,sans-serif;font-size:2.6rem;line-height:0;color:var(--accent);vertical-align:-.32em;margin-right:.18em}
-.voice cite{display:block;margin-top:.7rem;font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--ink-3)}
-.voice cite b{font-family:Archivo,sans-serif;font-size:.86rem;font-weight:600;color:var(--ink);letter-spacing:0}
+.voice blockquote::before{content:"”";font-family:Fraunces,serif;font-size:2.6rem;line-height:0;
+  color:var(--moss);vertical-align:-.32em;margin-right:.18em}
+.voice cite{display:block;margin-top:.7rem;font-style:normal;font-family:"IBM Plex Mono",monospace;
+  font-size:.72rem;color:var(--ink-3)}
+.voice cite b{font-family:Fraunces,serif;font-size:.88rem;font-weight:600;color:var(--ink);letter-spacing:0}
 
 .tl{list-style:none;padding:0;margin:1.4rem 0 0;position:relative}
 .tl::before{content:"";position:absolute;left:5.9rem;top:.4rem;bottom:.4rem;width:1px;background:var(--line)}
 .tl li{display:grid;grid-template-columns:5.9rem 1fr;gap:1.4rem;padding:.55rem 0;position:relative}
 .tl .d{font-family:"IBM Plex Mono",monospace;font-size:.76rem;color:var(--ink-3);padding-top:.15rem}
 .tl .e{position:relative;padding-left:1.1rem}
-.tl .e::before{content:"";position:absolute;left:-.32rem;top:.62rem;width:.55rem;height:.55rem;border-radius:50%;background:var(--line);border:2px solid var(--paper)}
-.tl li.now .e::before{background:var(--accent)}
+.tl .e::before{content:"";position:absolute;left:-.32rem;top:.62rem;width:.55rem;height:.55rem;
+  border-radius:50%;background:var(--line);border:2px solid var(--paper)}
+.tl li.now .e::before{background:var(--moss)}
 .tl li.now .e{font-weight:600}
 @media(max-width:40rem){
   .tl::before{display:none}
@@ -192,11 +229,14 @@ footer a{color:var(--ink-2)}
 <div class="topbar">
   <div class="wrap topbar-in">
     <div class="brandmark">
-      <svg width="22" height="14" viewBox="0 0 22 14" fill="none" aria-hidden="true"><path d="M1 12.5C4.5 12.5 5 2 9.5 2S13 11 17 11s3.5-4 3.5-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-      <span>490 m · Näs Focksta ⟶ Stora Bärsta</span>
+      <svg width="26" height="26" viewBox="0 0 132 132" aria-hidden="true">
+        <circle cx="66" cy="66" r="58" fill="var(--map-forest)"/>
+        <path d="M34,50 C52,44 54,66 68,72 C80,77 88,84 96,90" fill="none" stroke="var(--map-ink)" stroke-width="11" stroke-linecap="round"/>
+      </svg>
+      <span data-sv="ca 500 m · Näs Focksta ⟶ Stora Bärsta" data-en="approx. 500 m · Näs Focksta ⟶ Stora Bärsta"></span>
     </div>
     <div class="barnav">
-      <a href="#sign" data-sv="Skriv under" data-en="Sign"></a>
+      <a href="#sign" data-sv="Skriv under" data-en="Add your name"></a>
       <div class="toggle" role="group" aria-label="Språk / Language">
         <button type="button" data-lang="sv" aria-pressed="true">SV</button>
         <button type="button" data-lang="en" aria-pressed="false">EN</button>
@@ -207,16 +247,44 @@ footer a{color:var(--ink-2)}
 
 <header class="hero">
   <div class="wrap">
-    <p class="eyebrow" data-sv="Grannförslag · Näs Focksta, Vångelsta, Stora &amp; Lilla Bärsta" data-en="A neighbourhood proposal · Näs Focksta, Vångelsta, Stora &amp; Lilla Bärsta"></p>
-    <h1 data-sv="En 490 meter lång stig så att barnen slipper cykla på C596." data-en="490 metres of gravel path, so our children stop cycling on road C596."></h1>
-    <div class="rule"></div>
-    <p class="lede" data-sv="Näs Focksta har vuxit till 70+ familjer en mil utanför Uppsala. Norr om byn finns ett utmärkt stignätverk hela vägen in till stan. Men för att nå det måste vi först ut på en av länets mest trafikerade gårdsvägar. En kort stig i skogskanten mot Stora Bärsta löser det — helt utan kostnad eller risk för markägaren." data-en="Näs Focksta has grown to 70+ families, ten kilometres outside Uppsala. North of the village an excellent path network runs all the way into town. To reach it, we first have to ride one of the county's busiest farm roads. A short path along the forest edge to Stora Bärsta fixes that — at no cost and no risk to the landowner."></p>
+    <div class="herotop">
+      <div>
+        <p class="eyebrow" data-sv="Grannförslag · Näs Focksta, Vångelsta, Stora &amp; Lilla Bärsta" data-en="A neighbourhood proposal · Näs Focksta, Vångelsta, Stora &amp; Lilla Bärsta"></p>
+        <h1 data-sv="Femhundra meter mellan två byar — och en trafikerad väg emellan." data-en="Five hundred metres between two villages, and a busy road in the way."></h1>
+        <div class="rule"></div>
+        <p class="lede" data-sv="Näs Focksta har vuxit till över 70 familjer en mil utanför Uppsala. Stora Bärsta ligger 500 meter bort, och däremellan bor ytterligare familjer. Idag måste alla ut på gårdsväg C596 för att ta sig mellan byarna: barnet på väg till skolbussen, grannen som ska hälsa på, föräldern med barnvagn, den som cyklar in till stan. En gång- och cykelstig i skogskanten löser det — utan kostnad eller risk för markägaren." data-en="Näs Focksta has grown to more than seventy families, ten kilometres outside Uppsala. Stora Bärsta lies five hundred metres away, with more families living in between. To get from one village to the other today, everyone ends up on the C596: the child walking to the school bus, the neighbour going visiting, the parent pushing a pram, anyone cycling into town. A path along the forest edge would fix that — at no cost and no risk to the landowner."></p>
+      </div>
+
+      <svg class="seal" viewBox="0 0 160 190" role="img" aria-label="Cykelstigen Näs Focksta – Stora Bärsta">
+        <defs>
+          <path id="sealtop" d="M 28.97,80 A 51.03,51.03 0 0 1 131.03,80" fill="none"/>
+          <clipPath id="sealclip"><circle cx="80" cy="80" r="46"/></clipPath>
+        </defs>
+        <circle cx="80" cy="80" r="46" fill="var(--map-forest)"/>
+        <g clip-path="url(#sealclip)">
+          <path d="M34,98 C50,92 66,106 86,101 C102,97 116,105 126,120 L126,132 L34,132 Z" fill="var(--map-field)"/>
+        </g>
+        <circle cx="80" cy="80" r="64" fill="none" stroke="var(--birch)" stroke-width="3"/>
+        <path d="M55,66 C69,61 71,78 85,84 C95,88 101,90 106,93" fill="none"
+              stroke="var(--map-ink)" stroke-width="3.4" stroke-dasharray="7.5 5"/>
+        <rect x="51.5" y="62.5" width="7.5" height="7.5" fill="var(--map-ink)"/>
+        <rect x="103" y="89.5" width="7.5" height="7.5" fill="var(--map-ink)"/>
+        <text font-family="IBM Plex Mono, monospace" font-weight="500" font-size="9.2"
+              fill="var(--ink-2)" style="letter-spacing:.05em">
+          <textPath href="#sealtop" startOffset="50%" text-anchor="middle">NÄS FOCKSTA · STORA BÄRSTA</textPath>
+        </text>
+        <text x="80" y="116" font-family="IBM Plex Mono, monospace" font-size="6.4" fill="var(--map-ink)"
+              text-anchor="middle" style="letter-spacing:.22em" opacity=".7">500 METER</text>
+        <text x="80" y="181" font-family="Fraunces, serif" font-weight="600" font-size="21"
+              fill="var(--ink)" text-anchor="middle">Cykelstigen</text>
+      </svg>
+    </div>
 
     <div class="counters">
       <div class="counter"><span class="k" data-sv="Hushåll" data-en="Households"></span><span class="v hi num" id="c-households">–</span></div>
       <div class="counter"><span class="k" data-sv="Fastigheter" data-en="Properties"></span><span class="v num" id="c-properties">–</span></div>
       <div class="counter"><span class="k" data-sv="Boende" data-en="Residents"></span><span class="v num" id="c-people">–</span></div>
-      <div class="counter"><span class="k" data-sv="Arbetstimmar utlovade" data-en="Volunteer hours"></span><span class="v num" id="c-hours">–</span><span class="u"> h</span></div>
+      <div class="counter"><span class="k" data-sv="Arbetstimmar utlovade" data-en="Hours volunteered"></span><span class="v num" id="c-hours">–</span><span class="u"> h</span></div>
     </div>
 
     <div class="match">
@@ -233,14 +301,14 @@ footer a{color:var(--ink-2)}
       </div>
       <div class="goalbar"><i class="own" id="bar-own"></i><i class="mat" id="bar-mat"></i></div>
       <div class="goalfoot">
-        <span><span class="key" style="background:var(--accent)"></span><span data-sv="Grannars löften" data-en="Neighbour pledges"></span> · <span class="key" style="background:var(--forest)"></span><span data-sv="Matchning" data-en="Match"></span></span>
+        <span><span class="key" style="background:var(--moss)"></span><span data-sv="Grannars löften" data-en="Neighbour pledges"></span> · <span class="key" style="background:var(--birch)"></span><span data-sv="Matchning" data-en="Match"></span></span>
         <span id="goal-label"></span>
       </div>
     </div>
 
     <figure class="plate">
-      <img src="/route.jpg" width="1251" height="805" alt="Karta över den föreslagna sträckningen från Vångelsta till Näs-Bärsta, 490 meter">
-      <figcaption data-sv="Föreslagen sträckning: Vångelsta → Näs-Bärsta, 490 m i skogskanten. Ur underlaget som skickades till markägaren i juni 2026." data-en="Proposed alignment: Vångelsta → Näs-Bärsta, 490 m along the forest edge. From the material sent to the landowner in June 2026."></figcaption>
+      <img src="/route.jpg" width="1251" height="805" alt="Karta över den föreslagna sträckningen från Vångelsta till Näs-Bärsta">
+      <figcaption data-sv="Föreslagen sträckning: Vångelsta → Näs-Bärsta, ca 500 m i skogskanten. Ur underlaget som skickades till markägaren i juni 2026." data-en="The proposed line: Vångelsta to Näs-Bärsta, roughly 500 m along the forest edge. From the material sent to the landowner in June 2026."></figcaption>
     </figure>
   </div>
 </header>
@@ -249,86 +317,86 @@ footer a{color:var(--ink-2)}
   <div class="wrap cols two">
     <div class="prose">
       <p class="eyebrow" data-sv="Problemet" data-en="The problem"></p>
-      <h2 data-sv="Idag går enda vägen ut ur byn på en väg utan vägren." data-en="Today the only way out of the village is a road with no shoulder."></h2>
-      <p data-sv="Väg C596 betjänar en inofficiell del av Uppsalas vägbälte och tar tung bil- och lastbilstrafik. Den som vill cykla till skola, jobb eller träning i Uppsala måste ut på den — även barnen. Det är därför de flesta familjer här sätter sig i bilen istället." data-en="Road C596 serves as an unofficial part of Uppsala's ring of feeder roads and carries heavy car and lorry traffic. Anyone cycling to school, work or training in Uppsala has to use it — children included. That is why most families here get in the car instead."></p>
-      <p data-sv="Grannbyarna Stora och Lilla Bärsta ligger 490 meter bort i fågelvägen. Mellan oss ligger en smal remsa skogskant. Den remsan är hela skillnaden mellan en trafikerad landsväg och ett sammanhängande stignät ända in till Uppsala." data-en="The neighbouring hamlets of Stora and Lilla Bärsta are 490 metres away as the crow flies. Between us lies a narrow strip of forest edge. That strip is the entire difference between a trafficked road and a continuous path network all the way into Uppsala."></p>
+      <h2 data-sv="Enda vägen mellan byarna saknar vägren." data-en="The only road between the villages has no verge."></h2>
+      <p data-sv="C596 är en gårdsväg som fått göra jobbet som genomfartsled. Den tar tung bil- och lastbilstrafik i full hastighet, och det finns ingenstans att ta vägen om något möter. Det är inte en väg man skickar ut ett barn på, och inte en väg man går på med rollator." data-en="The C596 is a farm track that ended up doing the work of a through road. It carries cars and lorries at speed, and there is nowhere to step aside when something comes past. It is not a road you send a child down, and not one you walk with a rollator."></p>
+      <p data-sv="Följden är att 500 meter fågelvägen i praktiken betyder bilresa. Grannar som bor några minuters promenad från varandra tar bilen för att hälsa på. Barn som skulle kunna gå till kompisen blir skjutsade. Och norr om Näs Focksta ligger ett utmärkt stignät hela vägen in till Uppsala som få vågar ansluta till." data-en="The result is that five hundred metres as the crow flies means getting in the car. Neighbours a few minutes' walk apart drive to see each other. Children who could walk to a friend's house get driven instead. And the excellent path network north of Näs Focksta, which runs all the way into Uppsala, stays out of reach for anyone unwilling to ride the C596 to get to it."></p>
+      <p data-sv="En stig i skogskanten är den enda pusselbit som saknas. Den byggs på en eftermiddag med grus och en grävmaskin, och den håller i femtio år." data-en="A path along the forest edge is the only missing piece. It is an afternoon's work with gravel and a digger, and it will last fifty years."></p>
     </div>
     <div>
-      <p class="eyebrow q" data-sv="Vad stigen ansluter till" data-en="What the path connects to"></p>
+      <p class="eyebrow q" data-sv="Stigen i siffror" data-en="The path in numbers"></p>
       <ul class="spec">
-        <li><span class="lbl" data-sv="Sträcka som saknas" data-en="Missing link"></span><span class="val">490 m</span></li>
+        <li><span class="lbl" data-sv="Sträcka" data-en="Length"></span><span class="val" data-sv="ca 500 m" data-en="approx. 500 m"></span></li>
         <li><span class="lbl" data-sv="Bredd" data-en="Width"></span><span class="val">1,0–1,8 m</span></li>
-        <li><span class="lbl" data-sv="Material" data-en="Surface"></span><span class="val" data-sv="Jord + packat grus" data-en="Soil + packed gravel"></span></li>
-        <li><span class="lbl" data-sv="Träd som behöver fällas" data-en="Trees to be felled"></span><span class="val">0–3</span></li>
+        <li><span class="lbl" data-sv="Mötesplatser" data-en="Passing places"></span><span class="val" data-sv="var 75–100 m" data-en="every 75–100 m"></span></li>
+        <li><span class="lbl" data-sv="Material" data-en="Surface"></span><span class="val" data-sv="Jord + packat grus" data-en="Soil and packed gravel"></span></li>
+        <li><span class="lbl" data-sv="Träd som fälls" data-en="Trees felled"></span><span class="val">0–3</span></li>
+        <li><span class="lbl" data-sv="Snöröjs vintertid" data-en="Cleared in winter"></span><span class="val" data-sv="Ja" data-en="Yes"></span></li>
         <li><span class="lbl" data-sv="Till Uppsala centrum" data-en="To central Uppsala"></span><span class="val">≈ 10 km</span></li>
-        <li><span class="lbl" data-sv="Hushåll i Näs Focksta" data-en="Households in Näs Focksta"></span><span class="val">70+</span></li>
-        <li><span class="lbl" data-sv="Grannar som stödjer" data-en="Adjacent neighbours supporting"></span><span class="val" data-sv="Samtliga" data-en="All of them"></span></li>
+        <li><span class="lbl" data-sv="Hushåll i byn" data-en="Households in the village"></span><span class="val">70+</span></li>
       </ul>
-      <p class="note" data-sv="Sträckan går genom en icke-ekonomiskt bärkraftig del av skogen. Planerad dragning kräver i princip ingen avverkning." data-en="The route runs through a commercially unproductive part of the forest. The planned alignment requires essentially no felling."></p>
+      <p class="note" data-sv="Mötesplatserna är korta breddningar där en barnvagn och en cykel kan passera varandra. De kostar nästan ingenting i grus och är skillnaden mellan en stig som fungerar för alla och en som fungerar för vissa." data-en="The passing places are short widened sections where a pram and a bicycle can get past each other. They cost almost nothing in gravel, and they are the difference between a path that works for everyone and one that works for some."></p>
     </div>
   </div>
 </section>
 
-<section id="forening">
+<section>
   <div class="wrap">
-    <p class="eyebrow" data-sv="Första steget" data-en="First step"></p>
-    <h2 data-sv="Vi startar ingen ny förening. Vi ber {ASSOC} att ta sig an projektet." data-en="We are not starting a new association. We are asking {ASSOC} to take this project on."></h2>
-    <div class="prose">
-      <p data-sv="En markägare skriver inte ett 50-årigt avtal med en grannchatt. Det behövs en juridisk person med organisationsnummer, styrelse, stadgar och ansvarsförsäkring — och den finns redan i byn. Därför är den första underskriften du lämnar här inte riktad till markägaren, utan till vår egen styrelse." data-en="A landowner does not sign a 50-year agreement with a neighbourhood chat group. It takes a legal entity with a registration number, a board, statutes and liability insurance — and the village already has one. So the first signature you leave here is not addressed to the landowner. It is addressed to our own board."></p>
-      <p data-sv="Underlaget nedan visar exakt tre saker: hur många hushåll och fastigheter som står bakom, hur mycket pengar och arbete som redan är utlovat, och att projektet inte kostar föreningen någonting. Det är det en styrelse behöver för att kunna säga ja." data-en="What this page produces shows exactly three things: how many households and properties stand behind it, how much money and labour is already committed, and that the project costs the association nothing. That is what a board needs in order to say yes."></p>
-    </div>
-    <div class="asks">
-      <div class="ask green"><h3 data-sv="Mandat att vara avtalspart" data-en="A mandate to be the counterparty"></h3><p data-sv="Att föreningen tecknar nyttjanderättsavtalet med markägaren i sitt namn, med organisationsnummer och ansvarsförsäkring." data-en="That the association signs the land-use agreement with the landowner in its own name, with its registration number and liability insurance."></p></div>
-      <div class="ask green"><h3 data-sv="Öronmärkta medel" data-en="Ring-fenced funds"></h3><p data-sv="Att insamlade pengar bokförs separat och bara får användas till stigen — och betalas tillbaka om projektet inte blir av." data-en="That funds raised are booked separately, may only be used for the path, and are returned if the project does not go ahead."></p></div>
-      <div class="ask green"><h3 data-sv="En arbetsgrupp" data-en="A working group"></h3><p data-sv="Att styrelsen utser en liten grupp som sköter markägarkontakt, offert, samrådsanmälan och byggdag. Ingen belastning på styrelsen i övrigt." data-en="That the board appoints a small group to handle the landowner, the quote, the consultation notice and the build day. No further load on the board."></p></div>
-      <div class="ask green"><h3 data-sv="Noll ekonomisk risk" data-en="Zero financial risk"></h3><p data-sv="Inga utgifter tas innan finansieringen är på plats och markägaren har sagt ja. Föreningen riskerar aldrig egna medel." data-en="No spending before the funding is in place and the landowner has said yes. The association never risks its own money."></p></div>
+    <p class="eyebrow" data-sv="Vem den är till för" data-en="Who it is for"></p>
+    <h2 data-sv="Cyklarna är skälet vi började. De är inte hela skälet." data-en="Bicycles are why we started. They are not the whole reason."></h2>
+    <div class="prose"><p data-sv="Det här är en gång- och cykelstig. Den som pendlar in till Uppsala har mest att vinna på den, men det är långt ifrån bara pendlare som får nytta av 500 meter trygg mark mellan två byar." data-en="This is a path for walking as much as for cycling. The people who commute into Uppsala gain the most from it, but they are far from the only ones who benefit from five hundred metres of safe ground between two villages."></p></div>
+    <div class="who">
+      <div><h3 data-sv="De äldre" data-en="Older neighbours"></h3><p data-sv="Kan gå mellan byarna igen. Snöröjd vinterväg betyder att det gäller året om, inte bara i juni." data-en="Can walk between the villages again. Clearing it in winter means that holds all year, not just in June."></p></div>
+      <div><h3 data-sv="Barnvagnar och rollatorer" data-en="Prams and rollators"></h3><p data-sv="Packat grus och mötesplatser gör sträckan framkomlig med hjul som inte är cykelhjul." data-en="Packed gravel and passing places make the route usable on wheels that are not bicycle wheels."></p></div>
+      <div><h3 data-sv="Familjerna däremellan" data-en="The families in between"></h3><p data-sv="Hushållen som ligger mellan byarna får en säker väg åt båda hållen, inte bara mot Uppsala." data-en="Households sitting between the two villages get a safe route in both directions, not only towards Uppsala."></p></div>
+      <div><h3 data-sv="Barn på egen hand" data-en="Children on their own"></h3><p data-sv="Till skolbussen, till kompisen, till fotbollen — utan att någon vuxen måste sätta sig i bilen." data-en="To the school bus, to a friend's house, to football — without an adult having to get in the car."></p></div>
+      <div><h3 data-sv="Pendlarna" data-en="Commuters"></h3><p data-sv="Ansluter till stignätet norrut och därmed hela vägen in till Uppsala, utan att röra C596." data-en="Reach the path network to the north, and with it the whole way into Uppsala, without touching the C596."></p></div>
+      <div><h3 data-sv="Alla andra" data-en="Everyone else"></h3><p data-sv="Hundpromenader, löprundor, kvällspromenaden. En stig som används varje dag sköter sig nästan själv." data-en="Dog walks, running, an evening stroll. A path that gets used every day very nearly maintains itself."></p></div>
     </div>
   </div>
 </section>
 
 <section class="band">
   <div class="wrap">
-    <p class="eyebrow" data-sv="Begäran till markägaren" data-en="The request to the landowner"></p>
+    <p class="eyebrow" data-sv="Begäran till markägaren" data-en="What we are asking the landowner for"></p>
     <h2 data-sv="Vi ber inte om pengar eller arbete. Vi ber om ett avtal." data-en="We are not asking for money or labour. We are asking for an agreement."></h2>
-    <div class="prose"><p data-sv="Marken förvaltas av Uppsala Akademiförvaltning för de stiftelser som finansierar forskning och utbildning vid Uppsala universitet. UAF hanterar redan omkring 400 avtalade nyttjanderätter i stiftelsernas skogar. Vår begäran är en till — utformad så att den inte kostar stiftelserna någonting och inte lämnar någon risk kvar hos dem." data-en="The land is managed by Uppsala Akademiförvaltning on behalf of the foundations that fund research and teaching at Uppsala University. UAF already administers some 400 contracted land-use rights across the foundations' forests. Ours would be one more — structured so it costs the foundations nothing and leaves no residual risk with them."></p></div>
+    <div class="prose"><p data-sv="Marken förvaltas av Uppsala Akademiförvaltning för de stiftelser som finansierar forskning och utbildning vid Uppsala universitet. UAF hanterar redan omkring 400 avtalade nyttjanderätter i stiftelsernas skogar. Vår begäran är en till — utformad så att den varken kostar stiftelserna något eller lämnar någon risk kvar hos dem." data-en="The land is managed by Uppsala Akademiförvaltning on behalf of the foundations that fund research and teaching at Uppsala University. UAF already administers some four hundred land-use agreements across the foundations' woodland. Ours would be one more — set up so that it costs the foundations nothing and leaves no risk sitting with them."></p></div>
     <div class="asks">
-      <div class="ask"><h3 data-sv="Ett nyttjanderättsavtal" data-en="A land-use agreement"></h3><p data-sv="Skriftligt avtal på 25–50 år för att anlägga och underhålla stigen längs den föreslagna sträckningen, inklusive snöröjning vintertid." data-en="A written agreement of 25–50 years to build and maintain the path along the proposed alignment, including snow clearing in winter."></p></div>
-      <div class="ask"><h3 data-sv="Marknadsmässig avgift" data-en="A market-rate fee"></h3><p data-sv="Vi betalar årlig ersättning på marknadsmässiga villkor, plus en engångsavgift för avtalsarbetet. Stiftelserna ska inte avstå värde för vår skull." data-en="We pay an annual fee on commercial terms, plus a one-off charge covering the drafting work. The foundations should not forgo value on our behalf."></p></div>
-      <div class="ask"><h3 data-sv="All kostnad hos oss" data-en="Every cost on our side"></h3><p data-sv="Anläggning, material, maskiner, skyltning och löpande underhåll bekostas och utförs av föreningen." data-en="Construction, materials, machinery, signage and ongoing upkeep are funded and carried out by the association."></p></div>
-      <div class="ask"><h3 data-sv="Ansvar och försäkring" data-en="Liability and insurance"></h3><p data-sv="Föreningen står som avtalspart med organisationsnummer och ansvarsförsäkring, och håller markägaren skadeslös." data-en="The association is the counterparty, with a registration number and liability insurance, and indemnifies the landowner."></p></div>
-      <div class="ask"><h3 data-sv="Myndighetskontakter" data-en="Permits handled"></h3><p data-sv="Vi gör samrådsanmälan enligt 12 kap. 6 § miljöbalken och sköter kontakten med Länsstyrelsen och kommunen." data-en="We file the consultation notice under Chapter 12 §6 of the Environmental Code and handle Länsstyrelsen and the municipality."></p></div>
-      <div class="ask"><h3 data-sv="Ett prejudikat finns redan" data-en="The precedent already exists"></h3><p data-sv="Stigen Bodarna–Lurbo, ca 760 m, ligger på fastighetsbeteckningen UPPSALA STABBY 1:1 och fungerar precis som den vi föreslår — bara längre." data-en="The Bodarna–Lurbo path, about 760 m, sits on the designation UPPSALA STABBY 1:1 and works exactly like the one we propose — only longer."></p></div>
+      <div class="ask"><h3 data-sv="Ett nyttjanderättsavtal" data-en="A land-use agreement"></h3><p data-sv="Skriftligt avtal på 25–50 år för att anlägga och underhålla stigen längs den föreslagna sträckningen, inklusive snöröjning vintertid." data-en="A written agreement of twenty-five to fifty years to build and maintain the path along the proposed line, winter clearing included."></p></div>
+      <div class="ask"><h3 data-sv="Marknadsmässig ersättning" data-en="Payment on commercial terms"></h3><p data-sv="Vi betalar för nyttjanderätten på marknadsmässiga villkor och står för kostnaden att upprätta avtalet. Stiftelserna ska inte behöva avstå värde för vår skull." data-en="We pay for the right on commercial terms and cover the cost of drawing up the agreement. The foundations should not have to give up value on our account."></p></div>
+      <div class="ask"><h3 data-sv="All kostnad hos oss" data-en="Every cost on our side"></h3><p data-sv="Anläggning, material, maskiner, skyltning och löpande underhåll bekostas och utförs av oss." data-en="Construction, materials, machinery, signage and upkeep are paid for and carried out by us."></p></div>
+      <div class="ask"><h3 data-sv="Ansvar och försäkring" data-en="Liability and insurance"></h3><p data-sv="Avtalet tecknas av en förening med organisationsnummer och ansvarsförsäkring, som håller markägaren skadeslös." data-en="The agreement is signed by a registered association carrying liability insurance, which indemnifies the landowner."></p></div>
+      <div class="ask"><h3 data-sv="Ingen myndighetsprövning" data-en="No permits in the way"></h3><p data-sv="Arbetet är så begränsat att naturmiljön inte förändras väsentligt: 0–3 träd, ingen dikning, inga vattendrag, ingen sprängning. Sträckningen ligger utanför naturreservatet och berör inget strandskydd, inga biotopskyddade objekt och inga kända fornlämningar." data-en="The work is small enough that it does not materially change the natural environment: three trees at most, no ditching, no watercourses, no blasting. The line falls outside the nature reserve and touches no shoreline protection, no protected biotopes and no recorded ancient monuments."></p></div>
+      <div class="ask"><h3 data-sv="Ett prejudikat finns redan" data-en="The precedent already exists"></h3><p data-sv="Stigen Bodarna–Lurbo, ca 760 m, ligger på fastighetsbeteckningen UPPSALA STABBY 1:1 och fungerar precis som den vi föreslår — bara längre." data-en="The Bodarna–Lurbo path, some 760 m of it, sits on the designation UPPSALA STABBY 1:1 and works exactly like the one we are proposing — only longer."></p></div>
     </div>
     <figure class="plate">
-      <img src="/overview.jpg" width="1334" height="750" loading="lazy" alt="Översiktskarta över Nåsten, Hågadalen och Uppsala med den aktuella platsen markerad">
-      <figcaption data-sv="Läget i landskapet: Näs Focksta och Bärsta i sydvästra kanten av Nåsten, med Uppsala till höger. Röd markering visar var stigen behövs." data-en="The setting: Näs Focksta and Bärsta on the south-western edge of Nåsten, Uppsala to the right. The red box marks where the link is missing."></figcaption>
+      <img src="/overview.jpg" width="1334" height="750" loading="lazy" alt="Översiktskarta över Nåsten, Hågadalen och Uppsala med platsen markerad">
+      <figcaption data-sv="Läget i landskapet: Näs Focksta och Bärsta i sydvästra kanten av Nåsten, med Uppsala till höger. Röd markering visar var stigen behövs." data-en="The setting: Näs Focksta and Bärsta on the south-western edge of Nåsten, with Uppsala off to the right. The red box marks the missing link."></figcaption>
     </figure>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <p class="eyebrow" data-sv="Målet" data-en="The goal"></p>
-    <h2 data-sv="Stigen byggd och finansierad i tio år framåt." data-en="The path built, and funded for ten years."></h2>
-    <div class="prose"><p data-sv="Målet är inte bara att lägga gruset. Ett avtal som ingen har råd att sköta är värdelöst för markägaren och för oss. Därför räknar vi hem både bygget och de tio första årens avgifter och underhåll — då kan föreningen skriva under utan att någonsin behöva be om mer." data-en="The goal is not only to lay the gravel. An agreement nobody can afford to service is worthless to the landowner and to us. So we fund both the build and the first ten years of fees and upkeep — which lets the association sign without ever having to come back for more."></p></div>
+    <p class="eyebrow" data-sv="Målet" data-en="The target"></p>
+    <h2 data-sv="Stigen byggd, och betald i tio år framåt." data-en="The path built, and paid for a decade ahead."></h2>
+    <div class="prose"><p data-sv="Målet är inte bara att lägga gruset. Ett avtal som ingen har råd att sköta är värdelöst både för markägaren och för oss. Därför räknar vi hem bygget, avgifterna och de tio första årens underhåll på en gång — då kan avtalet skrivas under utan att någon behöver be om mer pengar senare." data-en="The target is not just to lay the gravel. An agreement nobody can afford to service is worth nothing, to the landowner or to us. So we are raising for the build, the fees and the first ten years of upkeep together — which means the agreement can be signed without anyone having to come back for more money later."></p></div>
     <div class="tablewrap">
       <table>
-        <thead><tr><th data-sv="Post" data-en="Item"></th><th data-sv="Beräkning" data-en="Basis"></th><th style="text-align:right" data-sv="Kostnad" data-en="Cost"></th></tr></thead>
+        <thead><tr><th data-sv="Post" data-en="Item"></th><th style="text-align:right" data-sv="Kostnad" data-en="Cost"></th></tr></thead>
         <tbody>
-          <tr><td data-sv="Stigen, anläggning" data-en="The path, construction"></td><td class="mono">490 m × ≈ 306 kr/m</td><td class="n">150 000 kr</td></tr>
-          <tr><td data-sv="Nyttjanderätt: engångsavgift + 10 år" data-en="Land-use right: one-off + 10 years"></td><td class="mono">10 000 + 10 × 4 000</td><td class="n">50 000 kr</td></tr>
-          <tr><td data-sv="Underhåll och snöröjning, 10 år" data-en="Upkeep and snow clearing, 10 years"></td><td class="mono">10 × 8 000 kr</td><td class="n">80 000 kr</td></tr>
-          <tr><td data-sv="Juridik, inskrivning, samrådsanmälan" data-en="Legal, registration, consultation notice"></td><td class="mono" data-sv="engångskostnader" data-en="one-off"></td><td class="n">20 000 kr</td></tr>
+          <tr><td data-sv="Stigen, ca 500 m, med marginal för blöt mark" data-en="The path, approx. 500 m, with margin for wet ground"></td><td class="n">170 000 kr</td></tr>
+          <tr><td data-sv="Avtal, myndigheter och juridik" data-en="Agreement, authorities and legal work"></td><td class="n">70 000 kr</td></tr>
+          <tr><td data-sv="Underhåll och snöröjning, 10 år" data-en="Upkeep and snow clearing, 10 years"></td><td class="n">80 000 kr</td></tr>
         </tbody>
         <tfoot>
-          <tr><td data-sv="Mål" data-en="Goal"></td><td class="mono"></td><td class="n">300 000 kr</td></tr>
-          <tr><td data-sv="Byn behöver samla in — resten matchas" data-en="The village needs to raise — the rest is matched"></td><td class="mono">300 000 / 2</td><td class="n">150 000 kr</td></tr>
-          <tr><td data-sv="Per hushåll, 70 hushåll" data-en="Per household, 70 households"></td><td class="mono">150 000 / 70</td><td class="n">≈ 2 150 kr</td></tr>
+          <tr><td data-sv="Mål" data-en="Target"></td><td class="n">320 000 kr</td></tr>
+          <tr><td data-sv="Byn samlar in — resten matchas" data-en="The village raises — the rest is matched"></td><td class="n">160 000 kr</td></tr>
+          <tr><td data-sv="Per hushåll, räknat på 65 bidragande" data-en="Per household, counting on 65 contributing"></td><td class="n">≈ 2 460 kr</td></tr>
         </tfoot>
       </table>
     </div>
     <p class="note" id="matchnote"></p>
-    <p class="note" data-sv="Anläggningskostnaden är ett planeringsestimat och ersätts av en offert från lokal markentreprenör innan några pengar tas in. Gör byn arbetet själv och köper bara material och maskintid landar bygget nära 70 000–90 000 kr, och överskottet går till underhållsfonden. Vi söker även projektstöd via Leader Upplandsbygd, där lokal medfinansiering och dokumenterat engagemang är precis vad som bedöms." data-en="The construction figure is a planning estimate and will be replaced by a quote from a local groundworks contractor before any money is collected. If the village does the work itself and buys only materials and machine time, the build lands nearer SEK 70,000–90,000 and the surplus goes to the maintenance fund. We are also applying for project funding through Leader Upplandsbygd, where local co-financing and documented engagement are exactly what is assessed."></p>
+    <p class="note" data-sv="Anläggningskostnaden är ett planeringsestimat, inte en offert, och den innehåller medvetet marginal: den största osäkerheten är inte längden utan om någon sträcka visar sig blöt. Gör vi arbetet själva och köper bara material och maskintid landar bygget betydligt lägre, och överskottet går då till underhållsfonden. Byn har över 70 hushåll; vi räknar försiktigt med 65 som bidrar. Vi söker även projektstöd via Leader Upplandsbygd, där lokal medfinansiering och dokumenterat engagemang är precis vad som bedöms." data-en="The construction figure is a planning estimate rather than a quote, and it carries deliberate margin: the biggest unknown is not the length but whether any stretch turns out to be wet. If we do the work ourselves and buy only materials and machine time, the build comes in considerably lower, and the surplus goes to the maintenance fund. The village has more than seventy households; we are counting conservatively on sixty-five contributing. We are also applying to Leader Upplandsbygd, where local co-financing and demonstrated engagement are exactly what gets assessed."></p>
   </div>
 </section>
 
@@ -337,9 +405,9 @@ footer a{color:var(--ink-2)}
     <div>
       <p class="eyebrow" data-sv="Skriv under" data-en="Add your name"></p>
       <h2 data-sv="Ett namn per hushåll. Pengar, tid, eller bara ditt stöd." data-en="One name per household. Money, time, or simply your backing."></h2>
-      <p data-sv="Vi samlar inte in några pengar nu. Ett löfte här är en avsiktsförklaring: du betalar ingenting förrän föreningen har sagt ja, markägaren har skrivit under och det finns ett öronmärkt konto. Blir projektet inte av händer ingenting." data-en="We are not collecting money now. A pledge here is a declaration of intent: you pay nothing until the association has agreed, the landowner has signed, and there is a ring-fenced account. If the project does not go ahead, nothing happens."></p>
-      <p data-sv="Timmar räknas lika mycket som kronor. Gör vi delar av arbetet själva sjunker anläggningskostnaden från ca 150 000 kr till 70 000–90 000 kr — så en dag med spade är värd flera tusen kronor till projektet." data-en="Hours count as much as kronor. If we do part of the work ourselves the construction cost drops from about SEK 150,000 to 70,000–90,000 — so a day with a spade is worth several thousand kronor to the project."></p>
-      <p class="note" data-sv="Adress och fastighetsbeteckning är offentliga uppgifter i Sverige och visas i listan nedan — det är hela poängen: markägaren ska se vilka fastigheter som faktiskt berörs. Kryssa i rutan i formuläret om du ändå inte vill synas, till exempel vid skyddade personuppgifter. E-post visas aldrig och tas bort på begäran. Personuppgiftsansvarig: Yoed Anise, yoed.anise@gmail.com" data-en="Addresses and property designations are public information in Sweden and appear in the list below — which is the whole point: the landowner should see which properties are actually affected. Tick the box in the form if you would rather not appear, for instance if you have protected personal data. Email is never shown, and is deleted on request. Data controller: Yoed Anise, yoed.anise@gmail.com"></p>
+      <p data-sv="Ingen samlar in några pengar nu. Ett löfte här är en avsiktsförklaring: du betalar ingenting förrän markägaren skrivit under och det finns ett öronmärkt konto. Blir projektet inte av händer ingenting." data-en="No money is being collected yet. A pledge here is a statement of intent: you pay nothing until the landowner has signed and there is a ring-fenced account. If the project does not happen, nothing happens."></p>
+      <p data-sv="Timmar väger lika tungt som kronor. Ju mer av arbetet vi gör själva, desto billigare blir stigen — en dag med spade är värd flera tusen kronor till projektet." data-en="Hours count for as much as kronor. The more of the work we do ourselves, the cheaper the path gets — a day with a spade is worth several thousand kronor to the project."></p>
+      <p class="note" data-sv="Adress och fastighetsbeteckning är offentliga uppgifter i Sverige och visas i listan nedan — det är själva poängen: markägaren ska kunna se vilka fastigheter som faktiskt berörs. Kryssa i rutan i formuläret om du ändå inte vill synas, exempelvis vid skyddade personuppgifter. E-post visas aldrig och raderas på begäran. Personuppgiftsansvarig: Yoed Anise, yoed.anise@gmail.com" data-en="Addresses and property designations are public record in Sweden, and they appear in the list below — which is rather the point: the landowner should be able to see which properties are actually affected. Tick the box in the form if you would rather not be listed, for instance if your personal details are protected. Email addresses are never shown and are deleted on request. Data controller: Yoed Anise, yoed.anise@gmail.com"></p>
     </div>
 
     <form class="card" id="form" novalidate>
@@ -361,26 +429,26 @@ footer a{color:var(--ink-2)}
         <legend data-sv="Var du bor" data-en="Where you live"></legend>
         <div class="row2">
           <div class="field">
-            <label for="f-village" data-sv="By" data-en="Hamlet"></label>
+            <label for="f-village" data-sv="By" data-en="Village"></label>
             <select id="f-village" name="village">
               <option>Näs Focksta</option><option>Vångelsta</option><option>Stora Bärsta</option><option>Lilla Bärsta</option><option>Näs-Högby</option><option>Näs-Edeby</option>
-              <option value="Annan" data-sv="Annan" data-en="Other"></option>
+              <option value="Annan" data-sv="Annan" data-en="Somewhere else"></option>
             </select>
           </div>
           <div class="field">
-            <label for="f-household" data-sv="Personer i hushållet" data-en="People in household"></label>
+            <label for="f-household" data-sv="Personer i hushållet" data-en="People in the household"></label>
             <input id="f-household" name="household" type="number" min="1" max="12" value="2" inputmode="numeric">
           </div>
         </div>
         <div class="field">
-          <label for="f-address" data-sv="Adress" data-en="Street address"></label>
+          <label for="f-address" data-sv="Adress" data-en="Address"></label>
           <input id="f-address" name="address" maxlength="120" autocomplete="street-address" placeholder="Rusthållarevägen 21">
         </div>
         <div class="field" style="margin-bottom:0">
           <label for="f-property" data-sv="Fastighetsbeteckning (om du vet den)" data-en="Property designation (if you know it)"></label>
           <input id="f-property" name="propertyId" maxlength="60" placeholder="UPPSALA NÄS-BÄRSTA 4:3">
-          <p class="hint" data-sv="Står på ditt lagfartsbevis eller i fastighetsdeklarationen. Det är den uppgift markägaren och Lantmäteriet faktiskt räknar — en namngiven lista över fastigheter väger tyngre än ett antal namn." data-en="It is on your title deed or property tax return. This is the fact the landowner and Lantmäteriet actually count — a named list of properties carries more weight than a count of names."></p>
-          <div class="check" style="margin-top:.7rem"><input type="checkbox" id="f-hideaddr"><label for="f-hideaddr" data-sv="Visa inte min adress och fastighet publikt" data-en="Do not show my address and property publicly"></label></div>
+          <p class="hint" data-sv="Står på lagfartsbeviset. Det är den uppgift markägaren och Lantmäteriet räknar — en namngiven lista över fastigheter väger tyngre än ett antal namn." data-en="It is on your title deed. This is the detail the landowner and Lantmäteriet actually count — a named list of properties carries more weight than a headcount."></p>
+          <div class="check" style="margin-top:.7rem"><input type="checkbox" id="f-hideaddr"><label for="f-hideaddr" data-sv="Visa inte min adress och fastighet publikt" data-en="Do not list my address and property publicly"></label></div>
         </div>
       </fieldset>
 
@@ -388,44 +456,33 @@ footer a{color:var(--ink-2)}
         <legend data-sv="Vad du kan bidra med" data-en="What you can contribute"></legend>
         <div class="row2">
           <div class="field">
-            <label for="f-pledge" data-sv="Löfte i kronor" data-en="Pledge in SEK"></label>
+            <label for="f-pledge" data-sv="Löfte i kronor" data-en="Pledge, in kronor"></label>
             <input id="f-pledge" name="pledge" type="number" min="0" max="200000" step="100" placeholder="0" inputmode="numeric">
           </div>
           <div class="field">
-            <label for="f-hours" data-sv="Arbetstimmar" data-en="Volunteer hours"></label>
+            <label for="f-hours" data-sv="Arbetstimmar" data-en="Hours of work"></label>
             <input id="f-hours" name="hours" type="number" min="0" max="500" step="1" placeholder="0" inputmode="numeric">
           </div>
         </div>
         <div id="matchhint" class="hint" style="margin:-.4rem 0 .9rem"></div>
         <div class="checkgrid">
-          <div class="check"><input type="checkbox" id="h-maskin" value="maskin"><label for="h-maskin" data-sv="Maskin eller släp" data-en="Machinery or trailer"></label></div>
+          <div class="check"><input type="checkbox" id="h-maskin" value="maskin"><label for="h-maskin" data-sv="Maskin eller släp" data-en="Machinery or a trailer"></label></div>
           <div class="check"><input type="checkbox" id="h-kropp" value="kroppsarbete"><label for="h-kropp" data-sv="Kroppsarbete på byggdagen" data-en="Labour on the build day"></label></div>
           <div class="check"><input type="checkbox" id="h-plan" value="planering"><label for="h-plan" data-sv="Planering och offerter" data-en="Planning and quotes"></label></div>
-          <div class="check"><input type="checkbox" id="h-ans" value="ansokningar"><label for="h-ans" data-sv="Ansökningar och myndigheter" data-en="Applications and authorities"></label></div>
+          <div class="check"><input type="checkbox" id="h-ans" value="ansokningar"><label for="h-ans" data-sv="Ansökningar och myndigheter" data-en="Applications and paperwork"></label></div>
           <div class="check"><input type="checkbox" id="h-mat" value="material"><label for="h-mat" data-sv="Material eller grus" data-en="Materials or gravel"></label></div>
           <div class="check"><input type="checkbox" id="h-fika" value="fika"><label for="h-fika" data-sv="Mat och fika" data-en="Food and coffee"></label></div>
         </div>
       </fieldset>
 
-      <fieldset>
-        <legend data-sv="Föreningen" data-en="The association"></legend>
-        <div class="field">
-          <label id="lbl-member" data-sv="Är ditt hushåll medlem?" data-en="Is your household a member?"></label>
-          <div class="radios" role="radiogroup" aria-labelledby="lbl-member">
-            <div class="check"><input type="radio" name="member" id="m-ja" value="ja"><label for="m-ja" data-sv="Ja" data-en="Yes"></label></div>
-            <div class="check"><input type="radio" name="member" id="m-nej" value="nej"><label for="m-nej" data-sv="Nej" data-en="No"></label></div>
-            <div class="check"><input type="radio" name="member" id="m-vet" value="vet_ej" checked><label for="m-vet" data-sv="Vet ej" data-en="Not sure"></label></div>
-          </div>
+      <div class="field">
+        <label id="lbl-mandate" data-sv="Stödjer du att projektet drivs av en förening?" data-en="Do you back the project being run by an association?"></label>
+        <div class="radios" role="radiogroup" aria-labelledby="lbl-mandate">
+          <div class="check"><input type="radio" name="supportsAssociation" id="s-ja" value="ja" checked><label for="s-ja" data-sv="Ja" data-en="Yes"></label></div>
+          <div class="check"><input type="radio" name="supportsAssociation" id="s-nej" value="nej"><label for="s-nej" data-sv="Nej" data-en="No"></label></div>
+          <div class="check"><input type="radio" name="supportsAssociation" id="s-vet" value="vet_ej"><label for="s-vet" data-sv="Vet ej" data-en="Not sure"></label></div>
         </div>
-        <div class="field" style="margin-bottom:0">
-          <label id="lbl-mandate" data-sv="Stödjer du att föreningen driver stigen som projekt?" data-en="Do you back the association taking the path on as a project?"></label>
-          <div class="radios" role="radiogroup" aria-labelledby="lbl-mandate">
-            <div class="check"><input type="radio" name="supportsAssociation" id="s-ja" value="ja" checked><label for="s-ja" data-sv="Ja" data-en="Yes"></label></div>
-            <div class="check"><input type="radio" name="supportsAssociation" id="s-nej" value="nej"><label for="s-nej" data-sv="Nej" data-en="No"></label></div>
-            <div class="check"><input type="radio" name="supportsAssociation" id="s-vet" value="vet_ej"><label for="s-vet" data-sv="Vet ej" data-en="Not sure"></label></div>
-          </div>
-        </div>
-      </fieldset>
+      </div>
 
       <div class="field">
         <label for="f-email" data-sv="E-post (frivilligt)" data-en="Email (optional)"></label>
@@ -433,7 +490,7 @@ footer a{color:var(--ink-2)}
       </div>
       <div class="check">
         <input type="checkbox" id="f-consent" name="consent">
-        <label for="f-consent" data-sv="Ja, ni får spara min e-post och kontakta mig om cykelstigen." data-en="Yes, you may store my email and contact me about the path."></label>
+        <label for="f-consent" data-sv="Ja, ni får spara min e-post och kontakta mig om stigen." data-en="Yes, you may keep my email and contact me about the path."></label>
       </div>
 
       <div class="field">
@@ -443,7 +500,7 @@ footer a{color:var(--ink-2)}
 
       <div class="hp" aria-hidden="true"><label for="f-website">Website</label><input id="f-website" name="website" tabindex="-1" autocomplete="off"></div>
       <div id="turnstile"></div>
-      <button class="btn" type="submit" data-sv="Skriv under" data-en="Sign"></button>
+      <button class="btn" type="submit" data-sv="Skriv under" data-en="Add my name"></button>
       <div class="msg" id="formmsg" role="status"></div>
     </form>
   </div>
@@ -460,25 +517,25 @@ footer a{color:var(--ink-2)}
 <section class="band">
   <div class="wrap">
     <p class="eyebrow" data-sv="Stödet" data-en="Support"></p>
-    <h2 data-sv="Grannar som ställt sig bakom förslaget" data-en="Neighbours backing the proposal"></h2>
+    <h2 data-sv="Grannar som ställt sig bakom förslaget" data-en="Neighbours behind the proposal"></h2>
     <p class="note" id="mandate-line" hidden></p>
     <div id="sigs" class="sigs"></div>
-    <div id="sigs-empty" class="empty" data-sv="Ingen har skrivit under ännu. Bli den första." data-en="No signatures yet. Be the first."></div>
+    <div id="sigs-empty" class="empty" data-sv="Ingen har skrivit under ännu. Bli den första." data-en="Nobody has signed yet. Be the first."></div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <p class="eyebrow" data-sv="Status" data-en="Status"></p>
-    <h2 data-sv="Var ärendet står" data-en="Where the case stands"></h2>
+    <p class="eyebrow" data-sv="Status" data-en="Where things stand"></p>
+    <h2 data-sv="Så här långt har vi kommit" data-en="How far we have got"></h2>
     <ol class="tl">
-      <li><span class="d mono">12 maj 2026</span><span class="e" data-sv="Första kontakten med Uppsala Akademiförvaltning, som förvaltar marken." data-en="First contact with Uppsala Akademiförvaltning, which manages the land."></span></li>
-      <li><span class="d mono">17 juni 2026</span><span class="e" data-sv="UAF svarar och ber om en beskrivning av begäran med karta." data-en="UAF responds and asks for a description of the request, with a map."></span></li>
-      <li><span class="d mono">18 juni 2026</span><span class="e" data-sv="Underlag med föreslagen sträckning skickas in." data-en="Material with the proposed alignment is submitted."></span></li>
+      <li><span class="d mono">12 maj 2026</span><span class="e" data-sv="Första kontakten med Uppsala Akademiförvaltning, som förvaltar marken." data-en="First approach to Uppsala Akademiförvaltning, who manage the land."></span></li>
+      <li><span class="d mono">17 juni 2026</span><span class="e" data-sv="UAF svarar och ber om en beskrivning av begäran, med karta." data-en="UAF reply, asking for the request in writing with a map."></span></li>
+      <li><span class="d mono">18 juni 2026</span><span class="e" data-sv="Underlag med föreslagen sträckning skickas in." data-en="The proposal and the route map go in."></span></li>
       <li><span class="d mono">12 aug 2026</span><span class="e" data-sv="Telefonmöte med UAF:s skogschef." data-en="Phone meeting with UAF's head of forestry."></span></li>
-      <li><span class="d mono">25 aug 2026</span><span class="e" data-sv="Jämförelse med den befintliga stigen Bodarna–Lurbo på samma fastighetsbeteckning skickas in." data-en="Comparison with the existing Bodarna–Lurbo path on the same property designation is submitted."></span></li>
-      <li class="now"><span class="d mono" data-sv="Nu" data-en="Now"></span><span class="e" data-sv="Vi samlar in underskrifter, löften och arbetstimmar — underlaget som {ASSOC} behöver för att kunna ta sig an projektet." data-en="We are collecting signatures, pledges and volunteer hours — the case {ASSOC} needs in order to take the project on."></span></li>
-      <li><span class="d mono" data-sv="Sedan" data-en="Then"></span><span class="e" data-sv="Styrelsebeslut, offert från markentreprenör, och formell begäran om nyttjanderättsavtal till UAF." data-en="A board decision, a quote from a groundworks contractor, and a formal request to UAF for the land-use agreement."></span></li>
+      <li><span class="d mono">25 aug 2026</span><span class="e" data-sv="Jämförelse med den befintliga stigen Bodarna–Lurbo, på samma fastighetsbeteckning, skickas in." data-en="We send the comparison with the existing Bodarna–Lurbo path, on the same property designation."></span></li>
+      <li class="now"><span class="d mono" data-sv="Nu" data-en="Now"></span><span class="e" data-sv="Vi samlar underskrifter, löften och arbetstimmar — underlaget som visar att byn står bakom stigen och kan betala för den själv." data-en="We are gathering names, pledges and hours — the evidence that the village is behind this and can pay for it itself."></span></li>
+      <li><span class="d mono" data-sv="Sedan" data-en="Next"></span><span class="e" data-sv="Offert från markentreprenör, och en formell begäran om nyttjanderättsavtal till UAF." data-en="A quote from a groundworks contractor, and a formal request to UAF for the agreement."></span></li>
     </ol>
   </div>
 </section>
@@ -486,7 +543,7 @@ footer a{color:var(--ink-2)}
 <footer>
   <div class="wrap">
     <p data-sv="Cykelstigen Näs Focksta–Stora Bärsta är ett grannskapsinitiativ. Kontakt: Yoed Anise, 076-270-6632, yoed.anise@gmail.com" data-en="The Näs Focksta–Stora Bärsta path is a neighbourhood initiative. Contact: Yoed Anise, 076-270-6632, yoed.anise@gmail.com"></p>
-    <p data-sv="Kartunderlag från Lantmäteriets fastighetskarta. Kostnaderna är planeringsestimat, inte offerter. Vill du att din underskrift tas bort — mejla adressen ovan." data-en="Map material from the Lantmäteriet property map. Costs are planning estimates, not quotes. To have your signature removed, email the address above."></p>
+    <p data-sv="Kartunderlag från Lantmäteriets fastighetskarta. Kostnaderna är planeringsestimat, inte offerter. Vill du att din underskrift tas bort — mejla adressen ovan." data-en="Map material from the Lantmäteriet property map. Costs are planning estimates, not quotes. To have your entry removed, email the address above."></p>
   </div>
 </footer>
 
@@ -496,8 +553,7 @@ footer a{color:var(--ink-2)}
 
   var config = {
     turnstileSiteKey:'', contactEmail:'yoed.anise@gmail.com',
-    buildCost:150000, goal:300000, matchCap:300000,
-    matcherName:'Yoed Anise', associationName:'Näs Focksta Vänner'
+    buildCost:170000, goal:320000, matchCap:160000, matcherName:'Yoed Anise'
   };
   var data = { totals:null, signatures:[] };
   var lang = 'sv';
@@ -508,44 +564,42 @@ footer a{color:var(--ink-2)}
       thanks:'Tack — ditt namn står på listan.',
       nameReq:'Fyll i både förnamn och efternamn.',
       emailBad:'E-postadressen ser inte giltig ut.',
-      consentReq:'Kryssa i rutan om vi får spara din e-post, eller lämna e-postfältet tomt.',
+      consentReq:'Kryssa i rutan om vi får spara din e-post, eller lämna fältet tomt.',
       captcha:'Kontrollen misslyckades. Ladda om sidan och försök igen.',
       rate:'För många underskrifter från samma nätverk just nu. Försök om en stund.',
       down:'Kunde inte spara just nu. Försök igen, eller mejla ',
       generic:'Något gick fel. Försök igen om en stund.',
       inHouse:' i hushållet', sending:'Skickar…',
-      placeholder:'Varför det här spelar roll för ert hushåll…',
-      assoc:'Näs Focksta Vänner',
+      placeholder:'Varför stigen skulle betyda något för ert hushåll…',
       matchCapLine:function(c){ return 'Matchas 1:1 av ' + c.matcherName + ', upp till ' + nf(c.matchCap) + ' kr'; },
       goalLine:function(tot,goal){ return nf(tot) + ' av ' + nf(goal) + ' kr'; },
-      matchHint:function(v){ return v > 0 ? 'Ditt löfte på ' + nf(v) + ' kr blir ' + nf(v*2) + ' kr för stigen.' : ''; },
+      matchHint:function(v){ return v > 0 ? 'Ditt löfte på ' + nf(v) + ' kr blir ' + nf(v*2) + ' kr till stigen.' : ''; },
       matchLeft:function(left){ return left > 0
         ? 'Matchningen har ' + nf(left) + ' kr kvar — varje krona du lovar nu dubblas.'
         : 'Matchningen är fulltecknad. Löften utöver den går oavkortat till stigen.'; },
       liveNow:function(tot){ return '<b>' + nf(tot.households) + '</b> hushåll och <b>' + nf(tot.properties) + '</b> fastigheter står redan bakom. <b>' + nf(tot.total) + ' kr</b> och <b>' + nf(tot.hours) + ' timmar</b> är utlovade.'; },
-      mandateLine:function(n,tot){ return n + ' av ' + tot + ' hushåll stödjer att föreningen driver projektet.'; },
+      mandateLine:function(n,tot){ return n + ' av ' + tot + ' hushåll stödjer att en förening driver projektet.'; },
       hrs:' h'
     },
     en:{
       thanks:'Thank you — your name is on the list.',
-      nameReq:'Please give a first name and a surname.',
-      emailBad:'That email address does not look valid.',
-      consentReq:'Tick the box to let us store your email, or leave the email field empty.',
-      captcha:'The check failed. Reload the page and try again.',
-      rate:'Too many signatures from this network right now. Try again shortly.',
-      down:'Could not save right now. Try again, or email ',
+      nameReq:'Please give both a first name and a surname.',
+      emailBad:'That email address does not look right.',
+      consentReq:'Tick the box to let us keep your email, or leave the field empty.',
+      captcha:'The check did not go through. Reload the page and try again.',
+      rate:'Too many entries from this network just now. Try again shortly.',
+      down:'That could not be saved. Try again, or email ',
       generic:'Something went wrong. Try again in a moment.',
-      inHouse:' in household', sending:'Sending…',
-      placeholder:'Why this matters to your household…',
-      assoc:'Näs Focksta Vänner',
-      matchCapLine:function(c){ return 'Matched 1:1 by ' + c.matcherName + ', up to ' + nf(c.matchCap) + ' SEK'; },
-      goalLine:function(tot,goal){ return nf(tot) + ' of ' + nf(goal) + ' SEK'; },
-      matchHint:function(v){ return v > 0 ? 'Your ' + nf(v) + ' SEK pledge becomes ' + nf(v*2) + ' SEK for the path.' : ''; },
+      inHouse:' in the household', sending:'Sending…',
+      placeholder:'What the path would mean for your household…',
+      matchCapLine:function(c){ return 'Matched one for one by ' + c.matcherName + ', up to ' + nf(c.matchCap) + ' kr'; },
+      goalLine:function(tot,goal){ return nf(tot) + ' of ' + nf(goal) + ' kr'; },
+      matchHint:function(v){ return v > 0 ? 'Your ' + nf(v) + ' kr becomes ' + nf(v*2) + ' kr for the path.' : ''; },
       matchLeft:function(left){ return left > 0
-        ? nf(left) + ' SEK of matching is still available — every krona you pledge now is doubled.'
-        : 'The match is fully committed. Pledges beyond it go to the path in full.'; },
-      liveNow:function(tot){ return '<b>' + nf(tot.households) + '</b> households and <b>' + nf(tot.properties) + '</b> properties already back this. <b>' + nf(tot.total) + ' SEK</b> and <b>' + nf(tot.hours) + ' hours</b> are committed.'; },
-      mandateLine:function(n,tot){ return n + ' of ' + tot + ' households back the association taking this on.'; },
+        ? nf(left) + ' kr of matching is still on the table — anything you pledge now is doubled.'
+        : 'The matching is fully taken up. Pledges beyond it go to the path in full.'; },
+      liveNow:function(tot){ return '<b>' + nf(tot.households) + '</b> households and <b>' + nf(tot.properties) + '</b> properties are already behind this, with <b>' + nf(tot.total) + ' kr</b> and <b>' + nf(tot.hours) + ' hours</b> promised.'; },
+      mandateLine:function(n,tot){ return n + ' of ' + tot + ' households back an association running the project.'; },
       hrs:' h'
     }
   };
@@ -553,13 +607,11 @@ footer a{color:var(--ink-2)}
   function nf(n){ return new Intl.NumberFormat('sv-SE').format(n || 0); }
   function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
 
-  function assoc(){ return config.associationName || T('assoc'); }
-
   function applyLang(){
     document.documentElement.lang = lang;
     document.querySelectorAll('[data-sv]').forEach(function(el){
       var v = el.getAttribute(lang === 'en' ? 'data-en' : 'data-sv');
-      if(v !== null) el.innerHTML = v.split('{ASSOC}').join(esc(assoc()));
+      if(v !== null) el.innerHTML = v;
     });
     document.querySelectorAll('.toggle button').forEach(function(b){
       b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
@@ -598,7 +650,6 @@ footer a{color:var(--ink-2)}
     var matPct = config.goal ? Math.min(100 - ownPct, tot.matched / config.goal * 100) : 0;
     document.getElementById('bar-own').style.width = ownPct + '%';
     document.getElementById('bar-mat').style.width = matPct + '%';
-
     document.getElementById('matchnote').textContent = T('matchLeft')(tot.matchRemaining);
 
     var live = document.getElementById('live');
@@ -622,7 +673,7 @@ footer a{color:var(--ink-2)}
       var place = s.f || s.a || '';
       var el = document.createElement('div');
       el.className = 'sig';
-      el.innerHTML = '<div class="who">' + esc(s.n) + (s.l ? ' ' + esc(s.l) + '.' : '') + '</div>' +
+      el.innerHTML = '<div class="who2">' + esc(s.n) + (s.l ? ' ' + esc(s.l) + '.' : '') + '</div>' +
                      (place ? '<div class="place">' + esc(place) + '</div>' : '') +
                      '<div class="meta">' + bits.join(' · ') + '</div>';
       box.appendChild(el);
@@ -672,8 +723,7 @@ footer a{color:var(--ink-2)}
       .map(function(c){ return c.value; });
 
     var payload = {
-      first: first,
-      last: last,
+      first: first, last: last,
       village: form.village.value,
       address: form.address.value.trim(),
       propertyId: form.propertyId.value.trim(),
@@ -682,7 +732,6 @@ footer a{color:var(--ink-2)}
       pledge: form.pledge.value,
       hours: form.hours.value,
       helpWith: helpWith,
-      member: (form.querySelector('input[name=member]:checked') || {}).value || 'vet_ej',
       supportsAssociation: (form.querySelector('input[name=supportsAssociation]:checked') || {}).value || 'vet_ej',
       comment: form.comment.value.trim(),
       email: email,
@@ -708,7 +757,6 @@ footer a{color:var(--ink-2)}
         document.getElementById('matchhint').textContent = '';
         document.getElementById('f-hideaddr').checked = false;
         document.getElementById('s-ja').checked = true;
-        document.getElementById('m-vet').checked = true;
         say('ok', T('thanks'));
       } else if(r.json.ignored){
         form.reset();

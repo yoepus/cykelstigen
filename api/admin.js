@@ -50,7 +50,7 @@ export default async function handler(req, res) {
 function toCsv(rows) {
   const head = [
     'createdAt', 'first', 'lastName', 'village', 'address', 'propertyId',
-    'showAddress', 'household', 'pledge', 'hours', 'helpWith', 'member', 'supportsAssociation',
+    'showAddress', 'household', 'pledge', 'hours', 'helpWith', 'supportsAssociation',
     'email', 'consent', 'hidden', 'comment',
   ];
   const esc = (v) => `"${String(Array.isArray(v) ? v.join(' ') : (v ?? '')).replace(/"/g, '""')}"`;

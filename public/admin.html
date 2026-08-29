@@ -63,7 +63,7 @@ tr.hidden td{opacity:.42}
     <div class="tablewrap">
       <table>
         <thead><tr>
-          <th>Datum</th><th>Namn</th><th>By</th><th>Adress / fastighet</th><th>Hushåll</th><th>Löfte</th><th>Timmar</th><th>Hjälper med</th><th>Medlem</th><th>Mandat</th><th>E-post</th><th>Kommentar</th><th>Åtgärd</th>
+          <th>Datum</th><th>Namn</th><th>By</th><th>Adress / fastighet</th><th>Hushåll</th><th>Löfte</th><th>Timmar</th><th>Hjälper med</th><th>Mandat</th><th>E-post</th><th>Kommentar</th><th>Åtgärd</th>
         </tr></thead>
         <tbody id="rows"></tbody>
       </table>
@@ -132,7 +132,6 @@ tr.hidden td{opacity:.42}
           '<td class="n">' + nf(r.pledge) + ' kr</td>' +
           '<td class="n">' + nf(r.hours) + ' h</td>' +
           '<td>' + (r.helpWith || []).map(function(h){ return '<span class="tag">' + esc(h) + '</span>'; }).join(' ') + '</td>' +
-          '<td>' + esc(r.member) + '</td>' +
           '<td>' + esc(r.supportsAssociation) + '</td>' +
           '<td>' + (r.email ? esc(r.email) : '<span class="tag">ingen</span>') + '</td>' +
           '<td class="cmt">' + esc(r.comment) + '</td>' +

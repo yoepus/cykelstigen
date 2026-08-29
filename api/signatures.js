@@ -5,7 +5,7 @@ import {
   propertyFingerprint, toPublic, readAll,
 } from './_lib.js';
 
-const matchCap = () => Number.parseInt(process.env.MATCH_CAP_SEK, 10) || 300000;
+const matchCap = () => Number.parseInt(process.env.MATCH_CAP_SEK, 10) || 160000;
 
 export default async function handler(req, res) {
   if (req.method === 'GET') return list(res);
@@ -99,7 +99,6 @@ async function create(req, res) {
     pledge: clampInt(body.pledge, 0, 200000, 0),
     hours: clampInt(body.hours, 0, 500, 0),
     helpWith: normalizeHelp(body.helpWith),
-    member: normalizeTristate(body.member),
     supportsAssociation: normalizeTristate(body.supportsAssociation),
     comment: clean(body.comment, 240),
     email: consent ? email : '',
