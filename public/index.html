@@ -219,6 +219,23 @@ textarea{min-height:4.5rem;resize:vertical}
   .tl .e::before{display:none}
 }
 
+.cta{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:1.6rem}
+.cta-btn{display:inline-block;background:var(--moss);color:var(--paper);text-decoration:none;
+  font-family:Fraunces,serif;font-weight:600;font-size:clamp(1.05rem,2.4vw,1.3rem);
+  padding:.85rem 2rem;border-radius:999px;box-shadow:var(--shadow);
+  transition:transform .15s ease, background .15s ease}
+.cta-btn:hover{background:var(--moss-ink);transform:translateY(-1px)}
+.cta-sub{margin:0;font-size:.9rem;color:var(--ink-3)}
+@media(prefers-reduced-motion:reduce){.cta-btn{transition:none}}
+.stickycta{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;
+  padding:.7rem clamp(1rem,4vw,2rem) calc(.7rem + env(safe-area-inset-bottom));
+  background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(10px);
+  border-top:1px solid var(--line)}
+.stickycta a{display:block;text-align:center;background:var(--moss);color:var(--paper);
+  text-decoration:none;font-family:Fraunces,serif;font-weight:600;font-size:1.05rem;
+  padding:.8rem 1rem;border-radius:999px}
+.stickycta.on{display:block}
+@media(min-width:46rem){.stickycta{display:none!important}}
 footer{border-top:1px solid var(--line);padding:2.2rem 0 3rem;font-size:.88rem;color:var(--ink-3)}
 footer a{color:var(--ink-2)}
 [hidden]{display:none!important}
@@ -253,6 +270,12 @@ footer a{color:var(--ink-2)}
         <h1 data-sv="Femhundra meter mellan två byar — och en trafikerad väg emellan." data-en="Five hundred metres between two villages, and a busy road in the way."></h1>
         <div class="rule"></div>
         <p class="lede" data-sv="Näs Focksta har vuxit till över 70 familjer en mil utanför Uppsala. Stora Bärsta ligger 500 meter bort, och däremellan bor ytterligare familjer. Idag måste alla ut på gårdsväg C596 för att ta sig mellan byarna: barnet på väg till skolbussen, grannen som ska hälsa på, föräldern med barnvagn, den som cyklar in till stan. En gång- och cykelstig i skogskanten löser det — utan kostnad eller risk för markägaren." data-en="Näs Focksta has grown to more than seventy families, ten kilometres outside Uppsala. Stora Bärsta lies five hundred metres away, with more families living in between. To get from one village to the other today, everyone ends up on the C596: the child walking to the school bus, the neighbour going visiting, the parent pushing a pram, anyone cycling into town. A path along the forest edge would fix that — at no cost and no risk to the landowner."></p>
+
+
+        <div class="cta">
+          <a class="cta-btn" href="#sign" data-sv="Skriv under" data-en="Add your name"></a>
+          <p class="cta-sub" data-sv="Tar en minut. Du binder dig inte vid någonting." data-en="Takes a minute. It commits you to nothing."></p>
+        </div>
       </div>
 
       <svg class="seal" viewBox="0 0 160 190" role="img" aria-label="Cykelstigen Näs Focksta – Stora Bärsta">
@@ -540,6 +563,10 @@ footer a{color:var(--ink-2)}
   </div>
 </section>
 
+<div class="stickycta" id="stickycta">
+  <a href="#sign" data-sv="Skriv under" data-en="Add your name"></a>
+</div>
+
 <footer>
   <div class="wrap">
     <p data-sv="Cykelstigen Näs Focksta–Stora Bärsta är ett grannskapsinitiativ. Kontakt: Yoed Anise, 076-270-6632, yoed.anise@gmail.com" data-en="The Näs Focksta–Stora Bärsta path is a neighbourhood initiative. Contact: Yoed Anise, 076-270-6632, yoed.anise@gmail.com"></p>
@@ -571,7 +598,7 @@ footer a{color:var(--ink-2)}
       generic:'Något gick fel. Försök igen om en stund.',
       inHouse:' i hushållet', sending:'Skickar…',
       placeholder:'Varför stigen skulle betyda något för ert hushåll…',
-      matchCapLine:function(c){ return 'Matchas 1:1 av ' + c.matcherName + ', upp till ' + nf(c.matchCap) + ' kr'; },
+      matchCapLine:function(c){ return 'Matchas 1:1 av familjen Anise, upp till ' + nf(c.matchCap) + ' kr'; },
       goalLine:function(tot,goal){ return nf(tot) + ' av ' + nf(goal) + ' kr'; },
       matchHint:function(v){ return v > 0 ? 'Ditt löfte på ' + nf(v) + ' kr blir ' + nf(v*2) + ' kr till stigen.' : ''; },
       matchLeft:function(left){ return left > 0
@@ -592,7 +619,7 @@ footer a{color:var(--ink-2)}
       generic:'Something went wrong. Try again in a moment.',
       inHouse:' in the household', sending:'Sending…',
       placeholder:'What the path would mean for your household…',
-      matchCapLine:function(c){ return 'Matched one for one by ' + c.matcherName + ', up to ' + nf(c.matchCap) + ' kr'; },
+      matchCapLine:function(c){ return 'Matched one for one by the Anise family, up to ' + nf(c.matchCap) + ' kr'; },
       goalLine:function(tot,goal){ return nf(tot) + ' of ' + nf(goal) + ' kr'; },
       matchHint:function(v){ return v > 0 ? 'Your ' + nf(v) + ' kr becomes ' + nf(v*2) + ' kr for the path.' : ''; },
       matchLeft:function(left){ return left > 0
@@ -788,6 +815,21 @@ footer a{color:var(--ink-2)}
 
   applyLang();
   render();
+
+  // Sticky call to action on small screens: show once the hero scrolls away,
+  // hide again when the form itself is in view.
+  (function(){
+    var bar = document.getElementById("stickycta");
+    var signSection = document.getElementById("sign");
+    var hero = document.querySelector(".hero");
+    if(!("IntersectionObserver" in window) || !bar || !signSection || !hero) return;
+    var heroVisible = true, formVisible = false;
+    function update(){ bar.classList.toggle("on", !heroVisible && !formVisible); }
+    new IntersectionObserver(function(es){ heroVisible = es[0].isIntersecting; update(); },
+      {threshold:0}).observe(hero);
+    new IntersectionObserver(function(es){ formVisible = es[0].isIntersecting; update(); },
+      {threshold:0}).observe(signSection);
+  })();
 
   Promise.all([
     fetch('/api/config').then(function(r){ return r.json(); }).catch(function(){ return null; }),
