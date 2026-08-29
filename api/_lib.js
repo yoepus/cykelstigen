@@ -1,7 +1,10 @@
 import { Redis } from '@upstash/redis';
 import crypto from 'node:crypto';
 
-export const redis = Redis.fromEnv();
+export const redis = new Redis({
+  url: process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL,
+  token: process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN,
+});
 
 export const INDEX_KEY = 'sig:index';
 export const sigKey = (id) => `sig:${id}`;
