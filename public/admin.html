@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Moderering · Cykelstigen</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--paper:#F2F3EE;--surface:#fff;--surface-2:#E7EAE0;--ink:#171E18;--ink-2:#5B6A5C;--ink-3:#8B978C;--line:#D3D8CA;--accent:#1477B8;--accent-ink:#0E5C90;--warn:#A8641E}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#0F1310;--surface:#161C17;--surface-2:#1D241E;--ink:#E8ECE3;--ink-2:#9BA89B;--ink-3:#6D7A6E;--line:#2A332B;--accent:#5FB6E9;--accent-ink:#8ACCF2;--warn:#D8A05A}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:14px;line-height:1.55}
+.wrap{max-width:66rem;margin:0 auto;padding:2rem clamp(1rem,4vw,2rem) 4rem}
+h1{font-family:Archivo,sans-serif;font-variation-settings:"wdth" 118;font-size:1.6rem;margin:0 0 .3rem}
+.sub{color:var(--ink-3);margin:0 0 1.8rem}
+label{display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-bottom:.3rem}
+input{width:100%;font:inherit;padding:.6rem .7rem;border:1px solid var(--line);border-radius:7px;background:var(--surface);color:var(--ink)}
+button{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:.78rem;padding:.35rem .7rem;border-radius:6px;cursor:pointer}
+button:hover{border-color:var(--accent)}
+button.primary{background:var(--accent);color:#fff;border-color:var(--accent);font-family:Archivo,sans-serif;font-weight:700;font-size:.95rem;padding:.6rem 1.2rem}
+button.danger:hover{border-color:var(--warn);color:var(--warn)}
+.gate{max-width:24rem;display:grid;gap:.9rem}
+.totals{display:grid;grid-template-columns:repeat(auto-fit,minmax(8rem,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:9px;overflow:hidden;margin-bottom:1.4rem}
+.totals div{background:var(--surface);padding:.8rem .9rem}
+.totals b{display:block;font-size:1.35rem;font-variant-numeric:tabular-nums}
+.totals span{font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.bar{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.2rem;align-items:center}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:9px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:56rem;font-size:.8rem}
+th,td{text-align:left;padding:.5rem .7rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.64rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);font-weight:500;position:sticky;top:0;background:var(--surface-2)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.hidden td{opacity:.42}
+.cmt{max-width:22rem;white-space:pre-wrap}
+.tag{display:inline-block;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;padding:.1rem .4rem;border-radius:4px;background:var(--surface-2);color:var(--ink-2)}
+.acts{display:flex;gap:.35rem;flex-wrap:wrap}
+.err{color:var(--warn)}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Moderering</h1>
+  <p class="sub">Cykelstigen Näs Focksta–Stora Bärsta</p>
+
+  <form class="gate" id="gate">
+    <div>
+      <label for="tok">Admin-token</label>
+      <input id="tok" type="password" autocomplete="current-password" required>
+    </div>
+    <button class="primary" type="submit">Öppna</button>
+    <p class="err" id="gateerr" hidden>Fel token.</p>
+  </form>
+
+  <div id="panel" hidden>
+    <div class="totals" id="totals"></div>
+    <div class="bar">
+      <button id="refresh">Uppdatera</button>
+      <button id="csv">Ladda ner CSV</button>
+      <span class="tag" id="stamp"></span>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr>
+          <th>Datum</th><th>Namn</th><th>By</th><th>Adress / fastighet</th><th>Hushåll</th><th>Löfte</th><th>Timmar</th><th>Hjälper med</th><th>Medlem</th><th>Mandat</th><th>E-post</th><th>Kommentar</th><th>Åtgärd</th>
+        </tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var token = '';
+  try { token = sessionStorage.getItem('vna-admin') || ''; } catch(e){}
+
+  var gate = document.getElementById('gate');
+  var panel = document.getElementById('panel');
+  var rows = document.getElementById('rows');
+
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+  function nf(n){ return new Intl.NumberFormat('sv-SE').format(n || 0); }
+
+  function api(path, options){
+    options = options || {};
+    options.headers = Object.assign({ authorization:'Bearer ' + token }, options.headers || {});
+    return fetch(path, options);
+  }
+
+  function load(){
+    return api('/api/admin').then(function(res){
+      if(res.status === 401) throw new Error('unauthorized');
+      return res.json();
+    }).then(function(json){
+      var all = json.signatures || [];
+      var visible = all.filter(function(r){ return !r.hidden; });
+      var props = new Set();
+      visible.forEach(function(r){
+        var fp = (r.propertyId || r.address || '').trim().toUpperCase().replace(/\s+/g,' ');
+        if(fp) props.add(fp);
+      });
+      var totals = visible.reduce(function(a,r){
+        return {
+          h:a.h+1, p:a.p+(r.household||0), k:a.k+(r.pledge||0),
+          t:a.t+(r.hours||0), m:a.m+(r.supportsAssociation === 'ja' ? 1 : 0),
+          e:a.e+(r.email?1:0)
+        };
+      }, {h:0,p:0,k:0,t:0,m:0,e:0});
+      document.getElementById('totals').innerHTML =
+        '<div><b>' + nf(totals.h) + '</b><span>Hushåll</span></div>' +
+        '<div><b>' + nf(props.size) + '</b><span>Fastigheter</span></div>' +
+        '<div><b>' + nf(totals.p) + '</b><span>Personer</span></div>' +
+        '<div><b>' + nf(totals.k) + '</b><span>Kr utlovat</span></div>' +
+        '<div><b>' + nf(totals.t) + '</b><span>Timmar</span></div>' +
+        '<div><b>' + nf(totals.m) + '</b><span>Ja till mandat</span></div>' +
+        '<div><b>' + nf(totals.e) + '</b><span>E-post</span></div>' +
+        '<div><b>' + nf(all.length - visible.length) + '</b><span>Dolda</span></div>';
+
+      rows.innerHTML = '';
+      all.forEach(function(r){
+        var tr = document.createElement('tr');
+        if(r.hidden) tr.className = 'hidden';
+        tr.innerHTML =
+          '<td>' + esc((r.createdAt||'').slice(0,10)) + '</td>' +
+          '<td>' + esc(r.first) + ' ' + esc(r.lastName) + '</td>' +
+          '<td>' + esc(r.village) + '</td>' +
+          '<td>' + esc(r.address) + (r.propertyId ? '<br><span class="tag">' + esc(r.propertyId) + '</span>' : '') + (r.showAddress === false ? ' <span class="tag">dold</span>' : '') + '</td>' +
+          '<td class="n">' + nf(r.household) + '</td>' +
+          '<td class="n">' + nf(r.pledge) + ' kr</td>' +
+          '<td class="n">' + nf(r.hours) + ' h</td>' +
+          '<td>' + (r.helpWith || []).map(function(h){ return '<span class="tag">' + esc(h) + '</span>'; }).join(' ') + '</td>' +
+          '<td>' + esc(r.member) + '</td>' +
+          '<td>' + esc(r.supportsAssociation) + '</td>' +
+          '<td>' + (r.email ? esc(r.email) : '<span class="tag">ingen</span>') + '</td>' +
+          '<td class="cmt">' + esc(r.comment) + '</td>' +
+          '<td><div class="acts">' +
+            '<button data-id="' + esc(r.id) + '" data-action="' + (r.hidden ? 'show' : 'hide') + '">' + (r.hidden ? 'Visa' : 'Dölj') + '</button>' +
+            (r.comment ? '<button data-id="' + esc(r.id) + '" data-action="clear_comment">Rensa text</button>' : '') +
+            '<button class="danger" data-id="' + esc(r.id) + '" data-action="delete">Radera</button>' +
+          '</div></td>';
+        rows.appendChild(tr);
+      });
+      document.getElementById('stamp').textContent = 'Uppdaterad ' + new Date().toLocaleTimeString('sv-SE');
+    });
+  }
+
+  gate.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    token = document.getElementById('tok').value.trim();
+    load().then(function(){
+      try { sessionStorage.setItem('vna-admin', token); } catch(e){}
+      gate.hidden = true; panel.hidden = false;
+    }).catch(function(){
+      document.getElementById('gateerr').hidden = false;
+    });
+  });
+
+  rows.addEventListener('click', function(ev){
+    var b = ev.target.closest('button[data-action]');
+    if(!b) return;
+    if(b.dataset.action === 'delete' && !confirm('Radera den här underskriften permanent?')) return;
+    b.disabled = true;
+    api('/api/admin', {
+      method:'POST',
+      headers:{'content-type':'application/json'},
+      body: JSON.stringify({ id:b.dataset.id, action:b.dataset.action })
+    }).then(load).catch(function(){ b.disabled = false; });
+  });
+
+  document.getElementById('refresh').addEventListener('click', load);
+  document.getElementById('csv').addEventListener('click', function(){
+    api('/api/admin?format=csv').then(function(r){ return r.blob(); }).then(function(blob){
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url; a.download = 'cykelstigen-underskrifter.csv';
+      document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(url);
+    });
+  });
+
+  if(token){
+    load().then(function(){ gate.hidden = true; panel.hidden = false; }).catch(function(){});
+  }
+})();
+</script>
+</body>
+</html>
