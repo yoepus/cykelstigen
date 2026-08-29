@@ -74,8 +74,8 @@ a{color:var(--moss-ink)}
 
 .hero{padding:clamp(2rem,6vw,4rem) 0 0}
 .herotop{display:grid;gap:clamp(1.4rem,4vw,3rem);align-items:center;grid-template-columns:1fr}
-@media(min-width:52rem){.herotop{grid-template-columns:1fr auto}}
-.seal{width:clamp(9rem,22vw,13rem);height:auto;justify-self:center}
+@media(min-width:52rem){.herotop{grid-template-columns:minmax(0,1fr) auto}}
+.seal{width:clamp(13rem,32vw,25rem);height:auto;justify-self:center}
 .hero h1{font-size:clamp(2rem,5.6vw,3.6rem);line-height:1.04;font-variation-settings:"SOFT" 70,"WONK" 1;margin-bottom:1rem}
 .hero .lede{font-size:clamp(1.03rem,2vw,1.22rem);color:var(--ink-2);max-width:36rem;margin:0}
 .rule{height:3px;background:var(--moss);width:5.5rem;border-radius:2px;margin:1.3rem 0}
@@ -219,14 +219,14 @@ textarea{min-height:4.5rem;resize:vertical}
   .tl .e::before{display:none}
 }
 
-.cta{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:1.6rem}
-.cta-btn{display:inline-block;background:var(--moss);color:var(--paper);text-decoration:none;
-  font-family:Fraunces,serif;font-weight:600;font-size:clamp(1.05rem,2.4vw,1.3rem);
-  padding:.85rem 2rem;border-radius:999px;box-shadow:var(--shadow);
+.cta{display:flex;align-items:center;gap:1.6rem;flex-wrap:wrap;margin-top:2rem}
+.cta-btn{position:relative;display:inline-block;background:var(--moss);color:var(--paper);text-decoration:none;
+  font-family:Fraunces,serif;font-weight:600;font-size:clamp(1.2rem,3vw,1.55rem);line-height:1;
+  padding:1.05rem 2.6rem;border-radius:999px;box-shadow:var(--shadow);
   transition:transform .15s ease, background .15s ease}
-.cta-btn:hover{background:var(--moss-ink);transform:translateY(-1px)}
+.cta-btn:hover{background:var(--moss-ink);transform:translateY(-2px) rotate(-.4deg)}.cta-ring{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:calc(100% + 2.6rem);height:calc(100% + 1.5rem);overflow:visible;pointer-events:none}.cta-ring path{fill:none;stroke:var(--birch);stroke-width:3;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke-dasharray:700;stroke-dashoffset:700;animation:inkring 1.5s .5s ease-out forwards}@keyframes inkring{to{stroke-dashoffset:0}}
 .cta-sub{margin:0;font-size:.9rem;color:var(--ink-3)}
-@media(prefers-reduced-motion:reduce){.cta-btn{transition:none}}
+@media(prefers-reduced-motion:reduce){.cta-btn{transition:none}.cta-ring path{animation:none;stroke-dashoffset:0}}
 .stickycta{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;
   padding:.7rem clamp(1rem,4vw,2rem) calc(.7rem + env(safe-area-inset-bottom));
   background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(10px);
@@ -253,7 +253,7 @@ footer a{color:var(--ink-2)}
       <span data-sv="ca 500 m · Näs Focksta ⟶ Stora Bärsta" data-en="approx. 500 m · Näs Focksta ⟶ Stora Bärsta"></span>
     </div>
     <div class="barnav">
-      <a href="#sign" data-sv="Skriv under" data-en="Add your name"></a>
+      <a href="#sign" data-sv="Skriv under" data-en="Sign the petition"></a>
       <div class="toggle" role="group" aria-label="Språk / Language">
         <button type="button" data-lang="sv" aria-pressed="true">SV</button>
         <button type="button" data-lang="en" aria-pressed="false">EN</button>
@@ -266,15 +266,20 @@ footer a{color:var(--ink-2)}
   <div class="wrap">
     <div class="herotop">
       <div>
-        <p class="eyebrow" data-sv="Grannförslag · Näs Focksta, Vångelsta, Stora &amp; Lilla Bärsta" data-en="A neighbourhood proposal · Näs Focksta, Vångelsta, Stora &amp; Lilla Bärsta"></p>
+        <p class="eyebrow" data-sv="Grannförslag · Näs Focksta, Stora &amp; Lilla Bärsta" data-en="A neighbourhood proposal · Näs Focksta, Stora &amp; Lilla Bärsta"></p>
         <h1 data-sv="Femhundra meter mellan två byar — och en trafikerad väg emellan." data-en="Five hundred metres between two villages, and a busy road in the way."></h1>
         <div class="rule"></div>
         <p class="lede" data-sv="Näs Focksta har vuxit till över 70 familjer en mil utanför Uppsala. Stora Bärsta ligger 500 meter bort, och däremellan bor ytterligare familjer. Idag måste alla ut på gårdsväg C596 för att ta sig mellan byarna: barnet på väg till skolbussen, grannen som ska hälsa på, föräldern med barnvagn, den som cyklar in till stan. En gång- och cykelstig i skogskanten löser det — utan kostnad eller risk för markägaren." data-en="Näs Focksta has grown to more than seventy families, ten kilometres outside Uppsala. Stora Bärsta lies five hundred metres away, with more families living in between. To get from one village to the other today, everyone ends up on the C596: the child walking to the school bus, the neighbour going visiting, the parent pushing a pram, anyone cycling into town. A path along the forest edge would fix that — at no cost and no risk to the landowner."></p>
 
 
         <div class="cta">
-          <a class="cta-btn" href="#sign" data-sv="Skriv under" data-en="Add your name"></a>
-          <p class="cta-sub" data-sv="Tar en minut. Du binder dig inte vid någonting." data-en="Takes a minute. It commits you to nothing."></p>
+          <a class="cta-btn" href="#sign">
+            <span data-sv="Skriv under" data-en="Sign the petition"></span>
+            <svg class="cta-ring" viewBox="0 0 300 92" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M22,46 C22,20 84,9 152,9 C224,9 282,19 284,44 C286,68 224,82 150,83 C74,84 20,73 18,48 C16,30 46,16 104,11"/>
+            </svg>
+          </a>
+          <p class="cta-sub" data-sv="Ta en minut och gör bygden bättre för alla." data-en="Take a minute to make our area better for everyone."></p>
         </div>
       </div>
 
@@ -426,7 +431,7 @@ footer a{color:var(--ink-2)}
 <section class="band" id="sign">
   <div class="wrap cols two">
     <div>
-      <p class="eyebrow" data-sv="Skriv under" data-en="Add your name"></p>
+      <p class="eyebrow" data-sv="Skriv under" data-en="Pledge your support"></p>
       <h2 data-sv="Ett namn per hushåll. Pengar, tid, eller bara ditt stöd." data-en="One name per household. Money, time, or simply your backing."></h2>
       <p data-sv="Ingen samlar in några pengar nu. Ett löfte här är en avsiktsförklaring: du betalar ingenting förrän markägaren skrivit under och det finns ett öronmärkt konto. Blir projektet inte av händer ingenting." data-en="No money is being collected yet. A pledge here is a statement of intent: you pay nothing until the landowner has signed and there is a ring-fenced account. If the project does not happen, nothing happens."></p>
       <p data-sv="Timmar väger lika tungt som kronor. Ju mer av arbetet vi gör själva, desto billigare blir stigen — en dag med spade är värd flera tusen kronor till projektet." data-en="Hours count for as much as kronor. The more of the work we do ourselves, the cheaper the path gets — a day with a spade is worth several thousand kronor to the project."></p>
@@ -454,7 +459,7 @@ footer a{color:var(--ink-2)}
           <div class="field">
             <label for="f-village" data-sv="By" data-en="Village"></label>
             <select id="f-village" name="village">
-              <option>Näs Focksta</option><option>Vångelsta</option><option>Stora Bärsta</option><option>Lilla Bärsta</option><option>Näs-Högby</option><option>Näs-Edeby</option>
+              <option>Näs Focksta</option><option>Stora Bärsta</option><option>Lilla Bärsta</option><option>Näs-Högby</option><option>Näs-Edeby</option>
               <option value="Annan" data-sv="Annan" data-en="Somewhere else"></option>
             </select>
           </div>
@@ -523,7 +528,7 @@ footer a{color:var(--ink-2)}
 
       <div class="hp" aria-hidden="true"><label for="f-website">Website</label><input id="f-website" name="website" tabindex="-1" autocomplete="off"></div>
       <div id="turnstile"></div>
-      <button class="btn" type="submit" data-sv="Skriv under" data-en="Add my name"></button>
+      <button class="btn" type="submit" data-sv="Skriv under" data-en="Sign the petition"></button>
       <div class="msg" id="formmsg" role="status"></div>
     </form>
   </div>
@@ -564,7 +569,7 @@ footer a{color:var(--ink-2)}
 </section>
 
 <div class="stickycta" id="stickycta">
-  <a href="#sign" data-sv="Skriv under" data-en="Add your name"></a>
+  <a href="#sign" data-sv="Skriv under" data-en="Sign the petition"></a>
 </div>
 
 <footer>
