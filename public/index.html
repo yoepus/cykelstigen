@@ -515,15 +515,6 @@ footer a{color:var(--ink-2)}
       </fieldset>
 
       <div class="field">
-        <label id="lbl-mandate" data-sv="Stödjer du att projektet drivs av en förening?" data-en="Do you back the project being run by an association?"></label>
-        <div class="radios" role="radiogroup" aria-labelledby="lbl-mandate">
-          <div class="check"><input type="radio" name="supportsAssociation" id="s-ja" value="ja" checked><label for="s-ja" data-sv="Ja" data-en="Yes"></label></div>
-          <div class="check"><input type="radio" name="supportsAssociation" id="s-nej" value="nej"><label for="s-nej" data-sv="Nej" data-en="No"></label></div>
-          <div class="check"><input type="radio" name="supportsAssociation" id="s-vet" value="vet_ej"><label for="s-vet" data-sv="Vet ej" data-en="Not sure"></label></div>
-        </div>
-      </div>
-
-      <div class="field">
         <label for="f-email" data-sv="E-post (frivilligt)" data-en="Email (optional)"></label>
         <input id="f-email" name="email" type="email" maxlength="120" autocomplete="email" placeholder="namn@exempel.se">
       </div>
@@ -557,7 +548,6 @@ footer a{color:var(--ink-2)}
   <div class="wrap">
     <p class="eyebrow" data-sv="Stödet" data-en="Support"></p>
     <h2 data-sv="Grannar som ställt sig bakom förslaget" data-en="Neighbours behind the proposal"></h2>
-    <p class="note" id="mandate-line" hidden></p>
     <div id="sigs" class="sigs"></div>
     <div id="sigs-empty" class="empty" data-sv="Ingen har skrivit under ännu. Bli den första." data-en="Nobody's signed yet. Be the first."></div>
   </div>
@@ -701,12 +691,6 @@ footer a{color:var(--ink-2)}
     if(tot.households > 0){ live.innerHTML = T('liveNow')(tot); live.classList.add('on'); }
     else { live.classList.remove('on'); }
 
-    var mandateLine = document.getElementById('mandate-line');
-    if(tot.households > 0){
-      mandateLine.textContent = T('mandateLine')(tot.mandate, tot.households);
-      mandateLine.hidden = false;
-    } else { mandateLine.hidden = true; }
-
     var ordered = data.signatures.slice().reverse();
 
     var box = document.getElementById('sigs');
@@ -777,7 +761,6 @@ footer a{color:var(--ink-2)}
       pledge: form.pledge.value,
       hours: form.hours.value,
       helpWith: helpWith,
-      supportsAssociation: (form.querySelector('input[name=supportsAssociation]:checked') || {}).value || 'vet_ej',
       comment: form.comment.value.trim(),
       email: email,
       consent: form.consent.checked,
@@ -801,7 +784,6 @@ footer a{color:var(--ink-2)}
         form.household.value = 2;
         document.getElementById('matchhint').textContent = '';
         document.getElementById('f-hideaddr').checked = false;
-        document.getElementById('s-ja').checked = true;
         say('ok', T('thanks'));
       } else if(r.json.ignored){
         form.reset();
