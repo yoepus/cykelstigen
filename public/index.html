@@ -598,7 +598,7 @@ footer a{color:var(--ink-2)}
 
   var config = {
     turnstileSiteKey:'', contactEmail:'yoed.anise@gmail.com',
-    buildCost:170000, goal:320000, matchCap:160000, matcherName:'Yoed Anise'
+    buildCost:170000, goal:320000, matchCap:160000, matcherName:'en privat donator'
   };
   var data = { totals:null, signatures:[] };
   var lang = 'sv';
@@ -616,7 +616,7 @@ footer a{color:var(--ink-2)}
       generic:'Något gick fel. Försök igen om en stund.',
       inHouse:' i hushållet', sending:'Skickar…',
       placeholder:'Varför stigen skulle betyda något för ert hushåll…',
-      matchCapLine:function(c){ return 'Matchas 1:1 av familjen Anise, upp till ' + nf(c.matchCap) + ' kr'; },
+      matchCapLine:function(c){ return 'Matchas 1:1 av en privat donator, upp till ' + nf(c.matchCap) + ' kr'; },
       goalLine:function(tot,goal){ return nf(tot) + ' av ' + nf(goal) + ' kr'; },
       matchHint:function(v){ return v > 0 ? 'Ditt löfte på ' + nf(v) + ' kr blir ' + nf(v*2) + ' kr till stigen.' : ''; },
       matchLeft:function(left){ return left > 0
@@ -637,7 +637,7 @@ footer a{color:var(--ink-2)}
       generic:'Something went wrong. Try again in a moment.',
       inHouse:' in the household', sending:'Sending…',
       placeholder:'What the path would mean for your household…',
-      matchCapLine:function(c){ return 'Matched one for one by the Anise family, up to ' + nf(c.matchCap) + ' kr'; },
+      matchCapLine:function(c){ return 'Matched one for one by a private donor, up to ' + nf(c.matchCap) + ' kr'; },
       goalLine:function(tot,goal){ return nf(tot) + ' of ' + nf(goal) + ' kr'; },
       matchHint:function(v){ return v > 0 ? 'Your ' + nf(v) + ' kr becomes ' + nf(v*2) + ' kr for the path.' : ''; },
       matchLeft:function(left){ return left > 0
